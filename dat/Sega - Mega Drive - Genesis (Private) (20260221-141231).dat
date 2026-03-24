@@ -1,0 +1,802 @@
+<?xml version="1.0"?>
+<datafile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://datomatic.no-intro.org/stuff https://datomatic.no-intro.org/stuff/schema_nointro_datfile_v3.xsd">
+	<header>
+		<id>32</id>
+		<name>Sega - Mega Drive - Genesis (Private)</name>
+		<description>Sega - Mega Drive - Genesis (Private)</description>
+		<version>20260221-141231</version>
+		<author>Arctic Circle System, Aringon, baldjared, BigFred, bikerspade, BitLooter, buckwheat, C. V. Reynolds, coraz, dead_screem, DeadSkullzJr, Densetsu, DeriLoko3, EggmanPEI, einstein95, ElBarto, Flashfire42, Gefflon, gigadeath, Goratrix, Hiccup, Jack, Madeline, MeguCocoa, Money_114, niemand, nnssxx, norkmetnoil577, NovaAurora, number, omonim2007, Powerpuff, Prominos, Psychofox11, psykopat, rarenight, relax, RetroUprising, Rifu, root, sCZther, smesgr, SonGoku, Special T, sunbeam, Tauwasser, TeamEurope, Vigi, xNo, xuom2</author>
+		<homepage>No-Intro</homepage>
+		<url>https://www.no-intro.org</url>
+		<clrmamepro forcenodump="required"/>
+	</header>
+	<game name="16Bit Rhythm Land (Japan) (En) (Aftermarket) (Unl)" id="2469">
+		<category>Games</category>
+		<description>16Bit Rhythm Land (Japan) (En) (Aftermarket) (Unl)</description>
+		<rom name="16Bit Rhythm Land (Japan) (En) (Aftermarket) (Unl).md" size="4194304" crc="119a536a" md5="898ed60024f219d25cf2c1cb741c1a7c" sha1="cc6aa3af59434805c71622315b81d0556c69f221" sha256="7c6ba96d8b8667fbe1ba05f5572cd953e237fe20419c2925dbe5c663320745ef"/>
+	</game>
+	<game name="Abbaye des Morts, L' (World) (Aftermarket) (Unl)" id="2944">
+		<category>Games</category>
+		<description>Abbaye des Morts, L' (World) (Aftermarket) (Unl)</description>
+		<rom name="Abbaye des Morts, L' (World) (Aftermarket) (Unl).md" size="4194304" crc="c3b06fb9" md5="a9840677e55ad1e2d266abaa2b98ad23" sha1="dd4de83de4b9ef0420349d65e3424dc5c5700b68" sha256="d81ed29443097651f6892d7f1b0d2539f80473b3667c9134a7ae2b81769965e0" serial="LGM-01-0"/>
+	</game>
+	<game name="Alice Sisters (World) (En,Ja) (Itch.io) (Aftermarket) (Unl)" id="3462" cloneofid="2737">
+		<category>Games</category>
+		<description>Alice Sisters (World) (En,Ja) (Itch.io) (Aftermarket) (Unl)</description>
+		<rom name="Alice Sisters (World) (En,Ja) (Itch.io) (Aftermarket) (Unl).md" size="4194304" crc="49025566" md5="5de0bc863d19ce1b916164ecc3c16ebf" sha1="1204d40713560ac57a87c098b2952a1f4a93d4fa" sha256="7d388b388beab7d2e06b4df49cedb81415366ea9cfba5e585020f70566529619" serial="23091984-42"/>
+	</game>
+	<game name="Alice Sisters (World) (En,Ja) (Aftermarket) (Unl)" id="2737">
+		<category>Games</category>
+		<description>Alice Sisters (World) (En,Ja) (Aftermarket) (Unl)</description>
+		<rom name="Alice Sisters (World) (En,Ja) (Aftermarket) (Unl).md" size="4194304" crc="52d26560" md5="2b0d53357e22ec60c11be750f4e84f85" sha1="778138c430dba803a375aef1bfeec0aecfaf95e5" sha256="b0306361d5b0ddbb006abc1506c74a071a9022ec01eae00cb5d7a65d142cce61" status="verified" serial="23091984-42"/>
+	</game>
+	<game name="Amshay (World) (Steam) (Aftermarket) (Unl)" id="3005">
+		<category>Games</category>
+		<description>Amshay (World) (Steam) (Aftermarket) (Unl)</description>
+		<rom name="Amshay (World) (Steam) (Aftermarket) (Unl).md" size="1048576" crc="3c4f7d97" md5="d9f284d605a83f6eb56e3c874a8953f1" sha1="3f04d12518b22adf318a199d348824093d242f77" sha256="f394226c8a75c366cef193395b03ea69c4c62e548d3f894009b640dd8a2c3e2e" serial="08800880-00"/>
+	</game>
+	<game name="Arkagis Revolution (World) (En,Fr,Es) (v1.1) (Digital) (Aftermarket) (Unl)" id="2524">
+		<category>Games</category>
+		<description>Arkagis Revolution (World) (En,Fr,Es) (v1.1) (Digital) (Aftermarket) (Unl)</description>
+		<rom name="Arkagis Revolution (World) (En,Fr,Es) (v1.1) (Digital) (Aftermarket) (Unl).md" size="4194304" crc="a9bdc71b" md5="b9036c35924ee9c9e31a358ea8c86349" sha1="c3f03b06a220816b075c84090470a3974dd67bab" sha256="67193b823ebaa342f5adffb85c0c096178d43324fe4e89ba752528a4464565c3" serial="SIK-ROTO-01"/>
+	</game>
+	<game name="Arkagis Revolution (World) (En,Fr,Es) (Aftermarket) (Unl)" id="2879" cloneofid="2524">
+		<category>Games</category>
+		<description>Arkagis Revolution (World) (En,Fr,Es) (Aftermarket) (Unl)</description>
+		<rom name="Arkagis Revolution (World) (En,Fr,Es) (Aftermarket) (Unl).md" size="4194304" crc="cec7f421" md5="07a7db4e8c65ea267763533d33a6ab9b" sha1="bf982b3c8c7ba2e73bdb8ee153a39062f7b6957c" sha256="8fe643e5d30ad6aadc685d1f1a18bba991301c32bd8c7be38b46da7c101e84cf" mia="yes" serial="SIK-ROTO-01"/>
+	</game>
+	<game name="Astebros (World) (En,Ja,Fr,De,Es,It,Pt-BR,Zh) (neofid-studios.com) (Aftermarket) (Unl)" id="2930" cloneofid="3087">
+		<category>Games</category>
+		<description>Astebros (World) (En,Ja,Fr,De,Es,It,Pt-BR,Zh) (neofid-studios.com) (Aftermarket) (Unl)</description>
+		<rom name="Astebros (World) (En,Ja,Fr,De,Es,It,Pt-BR,Zh) (neofid-studios.com) (Aftermarket) (Unl).md" size="15466496" crc="0833390c" md5="985d5e1255f5e65799a36a6a9063c9f8" sha1="57fa08e25e4f33c540ab05688d9e535669530f39" sha256="cec20d4e64d2a5f060a88f6ed10c7c9a75531bfcf84e6015016d51d0b5bbe25c" serial="00000000-00"/>
+	</game>
+	<game name="Astebros (World) (En,Ja,Fr,De,Es,It,Pt-BR,Zh) (PixelHeart) (Aftermarket) (Unl)" id="3087">
+		<category>Games</category>
+		<description>Astebros (World) (En,Ja,Fr,De,Es,It,Pt-BR,Zh) (PixelHeart) (Aftermarket) (Unl)</description>
+		<rom name="Astebros (World) (En,Ja,Fr,De,Es,It,Pt-BR,Zh) (PixelHeart) (Aftermarket) (Unl).md" size="15466496" crc="fc12c174" md5="d32557486f6b7f2eae8d78c135827847" sha1="dad04ee77f0204aa5ea1a02dade0f3ba939f8694" sha256="bd2703d4565a469c2f2919f642243e13c362165db2d3bffd938d5bc4fdab5542" serial="00000000-00"/>
+	</game>
+	<game name="Astebros (World) (En,Ja,Fr,De,Es,It,Pt-BR,Zh) (Evercade) (Aftermarket) (Unl)" id="3327" cloneofid="3087">
+		<category>Games</category>
+		<description>Astebros (World) (En,Ja,Fr,De,Es,It,Pt-BR,Zh) (Evercade) (Aftermarket) (Unl)</description>
+		<rom name="Astebros (World) (En,Ja,Fr,De,Es,It,Pt-BR,Zh) (Evercade) (Aftermarket) (Unl).md" size="15466496" crc="dbbca6a4" md5="ee8f0e665cd09494eb40de4853bca357" sha1="564956009cb4a7cb53ef8c98f36650cba31ada15" sha256="af88d5b5cb68af98ca598f09dfc40d90337c579906c9cc1e928d37ccdfbf3836" serial="00000000-00"/>
+	</game>
+	<game name="Attack of the PETSCII Robots (World) (Aftermarket) (Unl)" id="2705">
+		<category>Games</category>
+		<description>Attack of the PETSCII Robots (World) (Aftermarket) (Unl)</description>
+		<rom name="Attack of the PETSCII Robots (World) (Aftermarket) (Unl).md" size="2097152" crc="843eecc6" md5="4e99bb4bdcb8e5d35acef4d4e4a0e8bb" sha1="cdb489f0c541c2450d785752aa34d229f705742c" sha256="4859abf0744aa0846266c274083ed0208de066b512d864e85e4552cf0271b397" serial="726F626F-74"/>
+	</game>
+	<game name="Block'em Sock'em (World) (Digital) (Aftermarket) (Unl)" id="3305">
+		<category>Games</category>
+		<description>Block'em Sock'em (World) (Digital) (Aftermarket) (Unl)</description>
+		<rom name="Block'em Sock'em (World) (Digital) (Aftermarket) (Unl).md" size="237312" crc="2f1a1655" md5="a36a505a4c26e63efab7bee536ca8d18" sha1="a8e4318f732898dadacc7afe33fd1d45bdbc57d7" sha256="289301f25a2e4103f7fae42fd8d14e324f49b5c09443af8072dce0c207039db8"/>
+	</game>
+	<game name="Blow'em Out! (World) (Aftermarket) (Unl)" id="2669">
+		<category>Games</category>
+		<description>Blow'em Out! (World) (Aftermarket) (Unl)</description>
+		<rom name="Blow'em Out! (World) (Aftermarket) (Unl).md" size="227136" crc="26f26c34" md5="24a3a0593be09cb7b1e713bf6182d2e3" sha1="c044bd104dc136820302edd5d62a20a21d84f75f" sha256="f95f7e2785bf413a4745f1a13741a1aeaac3ebdf7b146b92c8e52e19b5f9b990" serial="MK-0000-00"/>
+	</game>
+	<game name="Captain Barrel (World) (Aftermarket) (Unl)" id="3512">
+		<category>Games</category>
+		<description>Captain Barrel (World) (Aftermarket) (Unl)</description>
+		<rom name="Captain Barrel (World) (Aftermarket) (Unl).md" size="4194304" crc="d609ae4f" md5="7b515073a4d9fd3b985a4d47877a7e3e" sha1="764dbd7a492124338100d99161d1f3ad57a4c80d" sha256="2b417a63e0412f0fdf67dee434c72f4df45a10099ee24d8e80f9a73380a448e9" serial="00000000-00"/>
+	</game>
+	<game name="Chip's Challenge (USA, Europe) (Beta) (Aftermarket) (Unl)" id="2838" cloneofid="3537">
+		<category>Games</category>
+		<category>Preproduction</category>
+		<description>Chip's Challenge (USA, Europe) (Beta) (Aftermarket) (Unl)</description>
+		<rom name="Chip's Challenge (USA, Europe) (Beta) (Aftermarket) (Unl).md" size="1310720" crc="c57188bb" md5="234faebd2f0fb6cb3389945f12f3576e" sha1="3299624905759ed4f9730047f4f404c1e0c8ef75" sha256="ed553e831c8b3852b6576eeba53073db628402c9c34beca9ecbde2975a81fc3f" serial="00000000-00"/>
+	</game>
+	<game name="Chip's Challenge (USA, Europe) (Aftermarket) (Unl)" id="3537">
+		<category>Games</category>
+		<description>Chip's Challenge (USA, Europe) (Aftermarket) (Unl)</description>
+		<rom name="Chip's Challenge (USA, Europe) (Aftermarket) (Unl).md" size="1572864" crc="ee4d5fed" md5="05e4bd57cae226e5e6c1ed5271c26baf" sha1="7108edf5062ce21a4bbb235b548f61a23564453f" sha256="37de3c7e600de54eba3a916487cfa3ef9fa3756238df3e27a9965d50f96ecc80" serial="00000000-00"/>
+	</game>
+	<game name="City Connection (Japan) (En) (Aftermarket) (Unl)" id="3120">
+		<category>Games</category>
+		<description>City Connection (Japan) (En) (Aftermarket) (Unl)</description>
+		<rom name="City Connection (Japan) (En) (Aftermarket) (Unl).md" size="524288" crc="5d21d023" md5="517feb2de98665637f83cb4209396fd2" sha1="86756f89ca26ebb2c036335592e4f1f2ef546b51" sha256="45c7305c58c154a02849ee5a4290fecbfd8f686fb3ce4a7f22c2a19dcca16fc4" serial="H-811005-00"/>
+	</game>
+	<game name="Coffee Crisis (World) (Steam) (Aftermarket) (Unl)" id="2471" cloneofid="2532">
+		<category>Games</category>
+		<description>Coffee Crisis (World) (Steam) (Aftermarket) (Unl)</description>
+		<rom name="Coffee Crisis (World) (Steam) (Aftermarket) (Unl).md" size="4194304" crc="5f6f343d" md5="dc1fc80ab39f9a5bfac841a816c656d4" sha1="3ecdc7be47df36992c332ab4ff2524c253dc4252" serial="JN-20160131-03"/>
+	</game>
+	<game name="Coffee Crisis (World) (Aftermarket) (Unl)" id="2532">
+		<category>Games</category>
+		<description>Coffee Crisis (World) (Aftermarket) (Unl)</description>
+		<rom name="Coffee Crisis (World) (Aftermarket) (Unl).md" size="4194304" crc="870dfce7" md5="20d83107fe3f43109c219279ae5f9fca" sha1="ffb016201754434e26529aad6293caf88a3eb53b" serial="JN-20160131-03"/>
+	</game>
+	<game name="Coloco DX (World) (Aftermarket) (Unl)" id="3651">
+		<category>Games</category>
+		<description>Coloco DX (World) (Aftermarket) (Unl)</description>
+		<rom name="Coloco DX (World) (Aftermarket) (Unl).md" size="8388608" crc="48074b89" md5="eaf414f238a14411b3fcc83e57759495" sha1="4527273292ba1fea3a203dd3ba8df9296e9b40a5" sha256="56e0129778469e4226b42a3f81108ee7425ad37f53d45a79b762cf67ad23524f" serial="00000000-01"/>
+	</game>
+	<game name="Curse of Illmoore Bay, The (World) (Aftermarket) (Unl)" id="3298">
+		<category>Games</category>
+		<description>Curse of Illmoore Bay, The (World) (Aftermarket) (Unl)</description>
+		<rom name="Curse of Illmoore Bay, The (World) (Aftermarket) (Unl).md" size="4194304" crc="c71afaad" md5="f0d06c39a816469a7022f6851d877362" sha1="8d70e751e7e76539faed06839eb9b2a5fdf2b6e8" sha256="29667bf26c10e85c51549dc858a9da40aa595483dfea8638139c93ec80c2186e"/>
+	</game>
+	<game name="Curse of Illmoore Bay, The (World) (Digital) (Aftermarket) (Unl)" id="2667" cloneofid="3298">
+		<category>Games</category>
+		<description>Curse of Illmoore Bay, The (World) (Digital) (Aftermarket) (Unl)</description>
+		<rom name="Curse of Illmoore Bay, The (World) (Digital) (Aftermarket) (Unl).md" size="4189440" crc="7ad106c0" md5="ef4ecc2e5cfdd5d94a2c71e55034ecf8" sha1="ee7bcd2189bd35fb65ee3fbfbc7e45a7cafdee73" sha256="251fddc2364fb60fda6023c5a3bd14b0d0c448e46a42894d7ac00d16598eb0b7" serial="1774"/>
+	</game>
+	<game name="Curse of Illmoore Bay, The (World) (Steam) (Aftermarket) (Unl)" id="2731" cloneofid="3298">
+		<category>Games</category>
+		<description>Curse of Illmoore Bay, The (World) (Steam) (Aftermarket) (Unl)</description>
+		<rom name="Curse of Illmoore Bay, The (World) (Steam) (Aftermarket) (Unl).md" size="4502634" crc="ede71059" md5="b119d04de076a3cbe1b461fd47827811" sha1="9bdd9d8cca47b639eadf3ae4a3c5e12c9ae196cf" sha256="1d4444ab665abb4b39a55fddadc0f80b0cc6214bcbc0ce33f9ba85df440802de"/>
+	</game>
+	<game name="Cursed Knight, The (World) (En,Fr) (Aftermarket) (Unl)" id="2863">
+		<category>Games</category>
+		<description>Cursed Knight, The (World) (En,Fr) (Aftermarket) (Unl)</description>
+		<rom name="Cursed Knight, The (World) (En,Fr) (Aftermarket) (Unl).md" size="4194304" crc="573f195b" md5="b7c1cf0e17fa48f5fca6037d26da2e0d" sha1="7697ea661a2f5e97429991ca51dd0eb55a672126" sha256="856c0e369d5601c4f29e1afcb9dce99ff1a9c7662abd27ea481cd49fc272aac7" status="verified" serial="000BS017-00"/>
+	</game>
+	<game name="Cursed Legacy, The (World) (En,Fr) (Aftermarket) (Unl)" id="3555">
+		<category>Games</category>
+		<description>Cursed Legacy, The (World) (En,Fr) (Aftermarket) (Unl)</description>
+		<rom name="Cursed Legacy, The (World) (En,Fr) (Aftermarket) (Unl).md" size="4194304" crc="43867c88" md5="24cdc93be972ff9db594198beb621dc3" sha1="3245dac592a38cfe938790225fe8fa722703fb86" sha256="22e51be1e3cb10d6ee10ad1098ae2035bf05c5548666d1f6e456ce527d25ae52" serial="000BS033-00"/>
+	</game>
+	<game name="Cursed Legacy, The (World) (En,Fr) (Digital) (Aftermarket) (Unl)" id="3560" cloneofid="3555">
+		<category>Games</category>
+		<description>Cursed Legacy, The (World) (En,Fr) (Digital) (Aftermarket) (Unl)</description>
+		<rom name="Cursed Legacy, The (World) (En,Fr) (Digital) (Aftermarket) (Unl).md" size="4194304" crc="66ae7b04" md5="47859c35bb429de7021b402d65bd2358" sha1="ede3e711f5d784d6c3e257932a466c9ac2ad3961" sha256="80b1d8f7616ee5ab50bd2af5411aafec5d83288850d1db86364a5623d423f369" serial="000BS033-00"/>
+	</game>
+	<game name="Custodian (USA) (Aftermarket) (Unl)" id="2520">
+		<description>Custodian (USA) (Aftermarket) (Unl)</description>
+		<rom name="Custodian (USA) (Aftermarket) (Unl).md" size="1048576" crc="3245e60c" md5="bfbb59be93153a52d1d7021c7ea6d1be" sha1="ecd5bb3edb65d09649f6a0e66554be3948d28b75" sha256="d7030d7efe88ad019a5aba3e9375b7062bb52f3c21b11d6636b4a2485e972206" status="verified" serial="00000000-00"/>
+	</game>
+	<game name="Decoder (World) (De) (Aftermarket) (Unl)" id="2881">
+		<category>Audio</category>
+		<description>Decoder (World) (De) (Aftermarket) (Unl)</description>
+		<rom name="Decoder (World) (De) (Aftermarket) (Unl).md" size="4194304" crc="7b310789" md5="6a44f60d0bc27090e6b8697e3801155a" sha1="3ba659824baf8614a27762ca9d675ebd56c0001a" sha256="3eeff91c906cd001656265471a457e180ea7ae3d837058c8d2224cb3205ac0b0"/>
+	</game>
+	<game name="Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (Steam) (Aftermarket) (Unl)" id="2602" cloneofid="2624">
+		<category>Games</category>
+		<description>Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (Steam) (Aftermarket) (Unl)</description>
+		<rom name="Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (Steam) (Aftermarket) (Unl).md" size="15397620" crc="67283fbe" md5="d4ead56f4b0259b7c23d57633842b33a" sha1="98a143b2312a062d640952700cd0d2db78326fe2" sha256="a7f4027749ededcf00591e76bbd4f0d1377248745cf11d09a754b7fd82b04f27" serial="00000000-01"/>
+	</game>
+	<game name="Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.1) (Aftermarket) (Unl)" id="2624">
+		<category>Games</category>
+		<description>Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.1) (Aftermarket) (Unl)</description>
+		<rom name="Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.1) (Aftermarket) (Unl).md" size="15335424" crc="aacb216e" md5="fb715e4da5c8d9d0875801b21c29ac09" sha1="7525d9f54667b2e26feaea265f16316e2c7d96ec" sha256="c96e71be4dfa53bf6848df052cac0afa9d3f92a9cba4c12401dbbc6f9a678fae" serial="00000000-01"/>
+	</game>
+	<game name="Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (Aftermarket) (Unl)" id="2850" cloneofid="2624">
+		<category>Games</category>
+		<description>Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (Aftermarket) (Unl)</description>
+		<rom name="Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (Aftermarket) (Unl).md" size="15397620" crc="b4cc4311" md5="20ae451f4a0e89a89585269895c12ab6" sha1="fc96e424ba8baff9eafe896e58a8f0546a3178c9" sha256="2099503d5b9b7cf5e512ad44a65dbbc227fb460038d670bb4eb04d366e775e5e" serial="00000000-01"/>
+	</game>
+	<game name="Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.1) (Steam) (Aftermarket) (Unl)" id="2851" cloneofid="2624">
+		<category>Games</category>
+		<description>Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.1) (Steam) (Aftermarket) (Unl)</description>
+		<rom name="Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.1) (Steam) (Aftermarket) (Unl).md" size="15335424" crc="0be1c314" md5="c3f08958249e69c778d783e5311c0292" sha1="6d116979d5c4bcf3dde22dd173d3e0458d2a6a38" sha256="679a3492086c1b3be6f8f645619f6a7e1abb5e96ce0d08f4c4a039a6224e268e" serial="00000000-01"/>
+	</game>
+	<game name="Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.1) (Steam) (Aftermarket) (Unl) (Alt)" id="2852" cloneofid="2624">
+		<category>Games</category>
+		<description>Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.1) (Steam) (Aftermarket) (Unl) (Alt)</description>
+		<rom name="Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.1) (Steam) (Aftermarket) (Unl) (Alt).md" size="15335424" crc="3a1048be" md5="f1b31e85df5254081f57ae3f084e2bd9" sha1="1628005a4de023563db27d181f1ffbedc6e179c2" sha256="28499b9b3d43d808aa24221ef5bb54132c71a3a8f58062fa9e752973c7f26f97" status="verified" serial="00000000-01"/>
+	</game>
+	<game name="Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.11) (Steam) (Aftermarket) (Unl)" id="2853" cloneofid="2624">
+		<category>Games</category>
+		<description>Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.11) (Steam) (Aftermarket) (Unl)</description>
+		<rom name="Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.11) (Steam) (Aftermarket) (Unl).md" size="15335424" crc="51e45a09" md5="f8c8ebb90ed8121c11b20660df80992e" sha1="7bfc61210eccb8b133f5066013677ad49cdbcd9f" sha256="54dd7987573b50af5e5331309c02b9bb49508c1672fc54819ea0bf0ccb09cc28" serial="00000000-01"/>
+	</game>
+	<game name="Demons of Asteborg (World) (En,Fr,De,Es,It,Pt) (Switch) (Aftermarket) (Unl)" id="2854" cloneofid="2624">
+		<category>Games</category>
+		<description>Demons of Asteborg (World) (En,Fr,De,Es,It,Pt) (Switch) (Aftermarket) (Unl)</description>
+		<rom name="Demons of Asteborg (World) (En,Fr,De,Es,It,Pt) (Switch) (Aftermarket) (Unl).md" size="15204352" crc="b85dca58" md5="5c21a306325008d6786e6467f2ee359c" sha1="9c913f2ee17eceebd66a249283b00542e6f13868" sha256="0464115f37458d15c0c71435927f37b909b1367cd80bb5d3d64440f9e6c7fc47" serial="00000000-00"/>
+	</game>
+	<game name="Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.1) (Switch) (Aftermarket) (Unl)" id="2855" cloneofid="2624">
+		<category>Games</category>
+		<description>Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.1) (Switch) (Aftermarket) (Unl)</description>
+		<rom name="Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.1) (Switch) (Aftermarket) (Unl).md" size="15300986" crc="5eb014dd" md5="e3a7de0b9a1e0b546454eb9252ffcd84" sha1="2bf8ed5efa58a9dcf7cd8a9cd55e7e37f3c70a1a" sha256="7ae88d6fa913af7ad5980ede02b1022560cd3c65bf98a270d138e657bab6ba3f" serial="00000000-00"/>
+	</game>
+	<game name="Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.13) (Switch) (Aftermarket) (Unl)" id="2856" cloneofid="2624">
+		<category>Games</category>
+		<description>Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.13) (Switch) (Aftermarket) (Unl)</description>
+		<rom name="Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.13) (Switch) (Aftermarket) (Unl).md" size="15335424" crc="fada9f74" md5="e85757040f47ff5d20e1fa0c70c90c63" sha1="4d91363981c009e1040b865081b4a9eb0ac2f916" sha256="8cfe8277c5a4e931b89925651516d1a355f3eff106ff365d11f09d775b1faa32" serial="00000000-01"/>
+	</game>
+	<game name="Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.13) (Switch) (Aftermarket) (Unl) (Alt)" id="2857" cloneofid="2624">
+		<category>Games</category>
+		<description>Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.13) (Switch) (Aftermarket) (Unl) (Alt)</description>
+		<rom name="Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.13) (Switch) (Aftermarket) (Unl) (Alt).md" size="15335424" crc="cb2b14de" md5="7cf01f469f4ecc8ecc45008db0ebcc20" sha1="9f919bbdd2e48550e66253cf5799db8fe14f1741" sha256="2e52943d0ddb8ffcb5399bdb74b9c7aec35dd9b2756b21e8d1e0a7934123cb2f" serial="00000000-01"/>
+	</game>
+	<game name="Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.11) (neofid-studios.com) (Aftermarket) (Unl)" id="2858" cloneofid="2624">
+		<category>Games</category>
+		<description>Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.11) (neofid-studios.com) (Aftermarket) (Unl)</description>
+		<rom name="Demons of Asteborg (World) (En,Fr,De,Es,It,Pt-BR) (v1.11) (neofid-studios.com) (Aftermarket) (Unl).md" size="15335424" crc="8146afa6" md5="7ef77bbb609124bcfc18fa400de99bf3" sha1="3274194684fe28da04f6e57981ca7b00e10835d2" sha256="2774854c8bef347b7a93195410bce669aeb65f8f6d053896cf62c8143d106bc1" status="verified" serial="00000000-01"/>
+	</game>
+	<game name="Demons of Asteborg (Asia) (En,Ja,Fr,Zh,Ko,Ru) (Aftermarket) (Unl)" id="2928" cloneofid="2624">
+		<category>Games</category>
+		<description>Demons of Asteborg (Asia) (En,Ja,Fr,Zh,Ko,Ru) (Aftermarket) (Unl)</description>
+		<rom name="Demons of Asteborg (Asia) (En,Ja,Fr,Zh,Ko,Ru) (Aftermarket) (Unl).md" size="15466496" crc="9a6bd0b6" md5="c77559919fb556009d637a53c563f930" sha1="956b42729f135fede34aaec760221007458c5633" sha256="742327487f6b1ace00191b989edb7901b5c3aa74fbcd1bc066eed8af6118106e" serial="00000000-00"/>
+	</game>
+	<game name="Devwill Too MD (World) (Pt-BR) (Itch.io) (Aftermarket) (Unl)" id="2493" cloneofid="3322">
+		<category>Games</category>
+		<description>Devwill Too MD (World) (Pt-BR) (Itch.io) (Aftermarket) (Unl)</description>
+		<rom name="Devwill Too MD (World) (Pt-BR) (Itch.io) (Aftermarket) (Unl).md" size="3538944" crc="c14fc0d4" md5="2cccbc6fc354900aedc4c83a3c190f77" sha1="bb37a1b58eda33b6ce108e770fda389476b328cf" sha256="5ee24d7ec46a8b4563c22a167becd5cac3d78bbb05c2450bcc58492cd6780409" serial="00000000-00"/>
+	</game>
+	<game name="Devwill Too MD (World) (Itch.io) (Aftermarket) (Unl)" id="2494" cloneofid="3322">
+		<category>Games</category>
+		<description>Devwill Too MD (World) (Itch.io) (Aftermarket) (Unl)</description>
+		<rom name="Devwill Too MD (World) (Itch.io) (Aftermarket) (Unl).md" size="3538944" crc="25736e4f" md5="b9cf2b15b2b727fb3b748cab56420ec1" sha1="0d94389305c0ef13b694327ef4fb80d2700b391c" sha256="9cf41925b06dc78cf7844ce51b2317cc1464f14e80bda336277c356f00742cfd" serial="00000000-00"/>
+	</game>
+	<game name="Devwill Too Prologue (World) (En,Pt) (Aftermarket) (Unl)" id="2973">
+		<category>Games</category>
+		<description>Devwill Too Prologue (World) (En,Pt) (Aftermarket) (Unl)</description>
+		<rom name="Devwill Too Prologue (World) (En,Pt) (Aftermarket) (Unl).md" size="3168608" crc="736a07e2" md5="bd197de34b6f3326e761035576bd0b80" sha1="5cb22aadeba74ea155be1eb846a428bd665d5a16" sha256="14223b4b3d8fa3fd22ee68786a61a7b25612b5d5be8c170328ec3a33d370d2b0"/>
+	</game>
+	<game name="Diamond Thieves (World) (Aftermarket) (Unl)" id="2995">
+		<category>Games</category>
+		<description>Diamond Thieves (World) (Aftermarket) (Unl)</description>
+		<rom name="Diamond Thieves (World) (Aftermarket) (Unl).md" size="2097152" crc="b66fa98f" md5="c7caba7090c868823567c679c040eda4" sha1="7c04543e0187f86d064b4ad2270a2fb25ec2475d" sha256="534656c3ab5bd17d5e6149a13d88750a18a43b64a5fb290499523ca2532efcd6" serial="00000000-00"/>
+	</game>
+	<game name="Earthion (World) (Ja) (Aftermarket) (Unl)" id="3598" cloneofid="3727">
+		<category>Games</category>
+		<description>Earthion (World) (Ja) (Aftermarket) (Unl)</description>
+		<rom name="Earthion (World) (Ja) (Aftermarket) (Unl).md" size="7864320" crc="f1948b8f" md5="9174ecd5ed983c4b99d46ed8851d69af" sha1="0e4ab7a6720bdc2f402f3a0a8b4a327cc591b435" sha256="616348f41e3c6ca4d6320df0b3d879530698aa8990b17d6dd1c98844769ddf34" serial="00000000-00"/>
+	</game>
+	<game name="Earthion (World) (Pt) (Aftermarket) (Unl)" id="3599" cloneofid="3727">
+		<category>Games</category>
+		<description>Earthion (World) (Pt) (Aftermarket) (Unl)</description>
+		<rom name="Earthion (World) (Pt) (Aftermarket) (Unl).md" size="7864320" crc="2677de3e" md5="b8266989962cf9b06215756ef40b1d8b" sha1="d33782b6039bb9cad485cf90386a27b877ee6c4d" sha256="cbb04f5e74a5e4152dd92a6a0ba76164c4f2582fdc8313a63f3f18d5ab3f9a58" serial="00000000-00"/>
+	</game>
+	<game name="Earthion (World) (En) (Aftermarket) (Unl)" id="3600" cloneofid="3727">
+		<category>Games</category>
+		<description>Earthion (World) (En) (Aftermarket) (Unl)</description>
+		<rom name="Earthion (World) (En) (Aftermarket) (Unl).md" size="7864320" crc="f2cc6b7e" md5="3049adbdcd6dcd3259b3298d3589bd39" sha1="bd1ac5d6b287d62faa0be5acbaf8585e67d79f07" sha256="f2c17365e5a9a80e8c1696f0468447cb76b1b3d38b0a10cebe60f6079fa41d5b" serial="00000000-00"/>
+	</game>
+	<game name="Earthion (World) (En) (v2.0.1) (Aftermarket) (Unl)" id="3601" cloneofid="3727">
+		<category>Games</category>
+		<description>Earthion (World) (En) (v2.0.1) (Aftermarket) (Unl)</description>
+		<rom name="Earthion (World) (En) (v2.0.1) (Aftermarket) (Unl).md" size="7864320" crc="47d6ac2c" md5="516d0290aa649709d807a2878111ed71" sha1="1541946f231f5c47a59c7a06bfd69f9e4ea3bd1d" sha256="324cc7cdafd0380c6308d4300b6982b65bc75070107ef44286ab387a31c8a657" serial="00000000-00"/>
+	</game>
+	<game name="Earthion (World) (Ja) (v2.0.1) (Aftermarket) (Unl)" id="3602" cloneofid="3727">
+		<category>Games</category>
+		<description>Earthion (World) (Ja) (v2.0.1) (Aftermarket) (Unl)</description>
+		<rom name="Earthion (World) (Ja) (v2.0.1) (Aftermarket) (Unl).md" size="7864320" crc="7f751480" md5="84b62272ff201834028fa29c31ed7bee" sha1="c803c23f4b774ff945bf00810d418ad40e68f6e3" sha256="58ce16aa3b6e41b5e6c518c500cd0733631960e3f1a5086961da912f98a6c6e7" serial="00000000-00"/>
+	</game>
+	<game name="Earthion (World) (Pt) (v2.0.1) (Aftermarket) (Unl)" id="3603" cloneofid="3727">
+		<category>Games</category>
+		<description>Earthion (World) (Pt) (v2.0.1) (Aftermarket) (Unl)</description>
+		<rom name="Earthion (World) (Pt) (v2.0.1) (Aftermarket) (Unl).md" size="7864320" crc="a087dfd7" md5="5a8cb7f0e38b3e3ac7bbd895eb9c5f0c" sha1="2fe5868ad3e02ee6342a0bc9872c383a5b3a7a3c" sha256="1d449b20fc78870558aaf845a0597d44cd2705fd17ffbb9b5be9f805e62ebefc" serial="00000000-00"/>
+	</game>
+	<game name="Earthion (World) (En) (v3.3.0) (Aftermarket) (Unl)" id="3604" cloneofid="3727">
+		<category>Games</category>
+		<description>Earthion (World) (En) (v3.3.0) (Aftermarket) (Unl)</description>
+		<rom name="Earthion (World) (En) (v3.3.0) (Aftermarket) (Unl).md" size="7340032" crc="ae5f1fb1" md5="ab9b221ccdf59044706b7efd4ca220d7" sha1="ad3aef5205b17d9c94a72e0f292d18cfba6807a0" sha256="7d5d462ffc98c11bb1d82496293e29d734ffb716117717b39b4f619ccbb1a9ac" serial="00000000-00"/>
+	</game>
+	<game name="Earthion (World) (Pt) (v3.3.0) (Aftermarket) (Unl)" id="3605" cloneofid="3727">
+		<category>Games</category>
+		<description>Earthion (World) (Pt) (v3.3.0) (Aftermarket) (Unl)</description>
+		<rom name="Earthion (World) (Pt) (v3.3.0) (Aftermarket) (Unl).md" size="7340032" crc="f44386a4" md5="b77039426e67cb93f6e47916a8aa507c" sha1="87d4b08294b7890b98df11310635b69535a18e13" sha256="023b58b884cd4941e45fec18d8ab22f01625bc662f0f832849641b4cc11fc609" serial="00000000-00"/>
+	</game>
+	<game name="Earthion (World) (Ja) (v3.3.0) (Aftermarket) (Unl)" id="3606" cloneofid="3727">
+		<category>Games</category>
+		<description>Earthion (World) (Ja) (v3.3.0) (Aftermarket) (Unl)</description>
+		<rom name="Earthion (World) (Ja) (v3.3.0) (Aftermarket) (Unl).md" size="7340032" crc="65ebc8e0" md5="d049572bb66fcb2b2b362f96ff6e2fd7" sha1="b735729e09029fa6676490272b7874ca9161f5e8" sha256="89ef05270dd59d800338b8671000c59b4109fb1e184bc92fe95314825f17effc" serial="00000000-00"/>
+	</game>
+	<game name="Earthion (World) (En) (v4.0.0) (Aftermarket) (Unl)" id="3727">
+		<category>Games</category>
+		<description>Earthion (World) (En) (v4.0.0) (Aftermarket) (Unl)</description>
+		<rom name="Earthion (World) (En) (v4.0.0) (Aftermarket) (Unl).md" size="7340032" crc="e5516900" md5="aa5475a6cceff3b84ab23d374f0c4cbd" sha1="25de490e84b28ed696310d56f54ca8a5c29dd1cc" sha256="4d6a3df8b58cde0a0ddbd030ec0e1580b0b6a6b7f0fcd44d298a49fad97a2e9a" status="verified" serial="00000000-00"/>
+	</game>
+	<game name="Earthion (World) (Ja) (v4.0.0) (Aftermarket) (Unl)" id="3728" cloneofid="3727">
+		<category>Games</category>
+		<description>Earthion (World) (Ja) (v4.0.0) (Aftermarket) (Unl)</description>
+		<rom name="Earthion (World) (Ja) (v4.0.0) (Aftermarket) (Unl).md" size="7340032" crc="0655e663" md5="1145b489d2fad3ce284700b2efcbfdaf" sha1="5c2f97cae5d6ae5f013995abe549710bd508999f" sha256="c8aa0b1a11cbee6288b58bbe234a5b52f945076980edc57e5c95ab9182daa2dd" status="verified" serial="00000000-00"/>
+	</game>
+	<game name="Earthion (World) (Pt) (v4.0.0) (Aftermarket) (Unl)" id="3729" cloneofid="3727">
+		<category>Games</category>
+		<description>Earthion (World) (Pt) (v4.0.0) (Aftermarket) (Unl)</description>
+		<rom name="Earthion (World) (Pt) (v4.0.0) (Aftermarket) (Unl).md" size="7340032" crc="c564f290" md5="03b801307139d2dfe1c0f14c5120b9bd" sha1="dcfc702c36e947b6534ddddd1d97f10428f90396" sha256="6a750e94ca3b3d49fb568679ec6651acccac267b80dea4bf1065198472e94747" status="verified" serial="00000000-00"/>
+	</game>
+	<game name="Earthion (World) (Demo 1) (Aftermarket) (Unl)" id="3768" cloneofid="3727">
+		<category>Demos</category>
+		<category>Games</category>
+		<description>Earthion (World) (Demo 1) (Aftermarket) (Unl)</description>
+		<rom name="Earthion (World) (Demo 1) (Aftermarket) (Unl).md" size="655360" crc="27423e6c" md5="5c865c848edcca81d380f1f10173d423" sha1="8b54d7bcf84540bf8ba933becb69cebc54ccb09f" sha256="8331f1d14e6eb41dea139d836b6ee25b384cd4fe19da268f8c6b2dc514442c02" serial="00000000-00"/>
+	</game>
+	<game name="Earthion (World) (Demo 4) (Aftermarket) (Unl)" id="3769" cloneofid="3727">
+		<category>Demos</category>
+		<category>Games</category>
+		<description>Earthion (World) (Demo 4) (Aftermarket) (Unl)</description>
+		<rom name="Earthion (World) (Demo 4) (Aftermarket) (Unl).md" size="7602176" crc="a9b237f9" md5="b516a4c3ce3c2bd2984778fdf1a79057" sha1="58877da0a570b917adb7ba8d94186a5b678403dd" sha256="124c5a5892967eed85f32193753652415530d9d57986974abf527577d220b1e2" serial="00000000-00"/>
+	</game>
+	<game name="Earthion (World) (Demo 3) (Aftermarket) (Unl)" id="3770" cloneofid="3727">
+		<category>Demos</category>
+		<category>Games</category>
+		<description>Earthion (World) (Demo 3) (Aftermarket) (Unl)</description>
+		<rom name="Earthion (World) (Demo 3) (Aftermarket) (Unl).md" size="6946816" crc="f3e4f17e" md5="1657b315f4ec2e9ef012a78989f4df6d" sha1="c2ea0d878656fb7e0a3bf7b7085fc2a03ed00fd7" sha256="edb894ce9514e88c3b8c73b476d204be86114dab7cbc5ca9dd1f327cf907159b" serial="00000000-00"/>
+	</game>
+	<game name="Earthion (World) (Demo 2) (Aftermarket) (Unl)" id="3771" cloneofid="3727">
+		<category>Demos</category>
+		<category>Games</category>
+		<description>Earthion (World) (Demo 2) (Aftermarket) (Unl)</description>
+		<rom name="Earthion (World) (Demo 2) (Aftermarket) (Unl).md" size="6946816" crc="261a45a8" md5="cae2c5e0de6c09826a20e19f6b39887f" sha1="7d5ad2c45461c234c9a62bfe09b193a62865ab62" sha256="e92dc98df661e0c3b7d61f652fe2cf5883e7d60479664555605ce3e3733dfb88" serial="00000000-00"/>
+	</game>
+	<game name="Enryuu Seiken Xiao-Mei (Japan) (Aftermarket) (Unl)" id="3230">
+		<category>Games</category>
+		<description>Enryuu Seiken Xiao-Mei (Japan) (Aftermarket) (Unl)</description>
+		<rom name="Enryuu Seiken Xiao-Mei (Japan) (Aftermarket) (Unl).md" size="4194304" crc="d7dd3791" md5="ffdf1932de5eca09da86a0c7cf1228f4" sha1="79e3f129b1b3d09ebdce9fe210ff01160cffec7d" sha256="dc0fedb24bc060865a79c43f0ddd72ed3085f81d156116048f1d5621b7a540e5" status="verified"/>
+	</game>
+	<game name="Escape 2042 - The Truth Defenders (World) (En,Ja,Fr,Es) (Retro Room Games) (Aftermarket) (Unl)" id="3441" cloneofid="2519">
+		<category>Games</category>
+		<description>Escape 2042 - The Truth Defenders (World) (En,Ja,Fr,Es) (Retro Room Games) (Aftermarket) (Unl)</description>
+		<rom name="Escape 2042 - The Truth Defenders (World) (En,Ja,Fr,Es) (Retro Room Games) (Aftermarket) (Unl).md" size="4194304" crc="41c88844" md5="16090114594446696fb248a7556cca3d" sha1="1ef55e6d1c8c8e007bfc5fd67bb293858b5db168" sha256="462c90bf52d5690461a5df836b31cb9d78ac4b41121623b390a665e5d9d69590" mia="yes" serial="00000000-42"/>
+	</game>
+	<game name="Escape 2042 - The Truth Defenders (World) (En,Ja,Fr,Es) (Digital) (Aftermarket) (Unl)" id="2480" cloneofid="2519">
+		<category>Games</category>
+		<description>Escape 2042 - The Truth Defenders (World) (En,Ja,Fr,Es) (Digital) (Aftermarket) (Unl)</description>
+		<rom name="Escape 2042 - The Truth Defenders (World) (En,Ja,Fr,Es) (Digital) (Aftermarket) (Unl).md" size="4194304" crc="0d81511c" md5="2c31d62a0329d7ced5a0e14fb6ff6571" sha1="b4ba79a2b8be9454f26427d1e3fe9f8140742991" serial="00000000-42"/>
+	</game>
+	<game name="Escape 2042 - The Truth Defenders (World) (En,Ja,Fr,Es) (OrionSoft) (Aftermarket) (Unl)" id="2519">
+		<category>Games</category>
+		<description>Escape 2042 - The Truth Defenders (World) (En,Ja,Fr,Es) (OrionSoft) (Aftermarket) (Unl)</description>
+		<rom name="Escape 2042 - The Truth Defenders (World) (En,Ja,Fr,Es) (OrionSoft) (Aftermarket) (Unl).md" size="4194304" crc="c51380e8" md5="13ec03dfb4f82f04d462dbed3162d3b3" sha1="005896d130bd7412fa471738ca3d0a8385d5e449" serial="00000000-42"/>
+	</game>
+	<game name="Eyra - The Crow Maiden (World) (Digital) (Aftermarket) (Unl)" id="2673">
+		<category>Games</category>
+		<description>Eyra - The Crow Maiden (World) (Digital) (Aftermarket) (Unl)</description>
+		<rom name="Eyra - The Crow Maiden (World) (Digital) (Aftermarket) (Unl).md" size="2083840" crc="d48289e3" md5="b164442a71afa3abc32f0f611f0c863c" sha1="22301d6366eac1b89234e59605d40d5e9e6559b5" sha256="c1e10670bd12b1993ad27df62834f7285e1f2835295a153dbf0de3bc3baf2512" status="verified" serial="3037"/>
+	</game>
+	<game name="Fight for Vengeance (World) (Aftermarket) (Unl)" id="3061">
+		<category>Games</category>
+		<description>Fight for Vengeance (World) (Aftermarket) (Unl)</description>
+		<rom name="Fight for Vengeance (World) (Aftermarket) (Unl).md" size="4194304" crc="7db61291" md5="fac65792015c3ea60a1c174e85e2b434" sha1="d241dd7a13d2c69d9a8a0fca11113cc81eb4affd" sha256="4b3d68ca8d9c95eafa0fbbfdfc4e1f124d72be14aa98eae986ef25583cb2fd7d"/>
+	</game>
+	<game name="FX Unit Yuki - The Henshin Engine (World) (Aftermarket) (Unl)" id="2481">
+		<category>Games</category>
+		<description>FX Unit Yuki - The Henshin Engine (World) (Aftermarket) (Unl)</description>
+		<rom name="FX Unit Yuki - The Henshin Engine (World) (Aftermarket) (Unl).md" size="6291456" crc="f6728877" md5="cb3fe7091feb5aa75891ca6937426345" sha1="0396d30691ea752fd923ebfe435187ec248e42b7" sha256="375274674ffaae931957e2800c4335e740ec17acb5399842e087895ada7597c9" serial="00000000-00"/>
+	</game>
+	<game name="Game Panic II (World) (Digital) (Aftermarket) (Unl)" id="3309">
+		<category>Games</category>
+		<description>Game Panic II (World) (Digital) (Aftermarket) (Unl)</description>
+		<rom name="Game Panic II (World) (Digital) (Aftermarket) (Unl).md" size="2097152" crc="d9a419a1" md5="19f2e18cd78437517c810ccefbeafcd5" sha1="48c38540ff2f1afcb9c460da38d5f145a808b202" sha256="57b3be6b13169369c236aaa94387e3b03fb843f1f8ed21c7e55a3811c4ec9b07" serial="MK-0000-00"/>
+	</game>
+	<game name="Go! Go! PogoGirl (World) (Aftermarket) (Unl)" id="3608">
+		<category>Games</category>
+		<description>Go! Go! PogoGirl (World) (Aftermarket) (Unl)</description>
+		<rom name="Go! Go! PogoGirl (World) (Aftermarket) (Unl).md" size="2097152" crc="25ada8df" md5="53341f054de9e591fece6525d50e0fe0" sha1="2b7ee5d57d5cef9cb701b4870385641070c1af95" sha256="0dd718ac56309586419abd3389956f256db78baa92d590425e5a24dfeb8857cf" serial="20200630-01"/>
+	</game>
+	<game name="GunSlugs (World) (Aftermarket) (Unl)" id="3438">
+		<category>Games</category>
+		<description>GunSlugs (World) (Aftermarket) (Unl)</description>
+		<rom name="GunSlugs (World) (Aftermarket) (Unl).md" size="1048576" crc="727563a2" md5="3dac56cc8ea638c68bc5bba004b62373" sha1="1cbb8d706db9a1edbb003b8ef2b11c04ddeb4917" sha256="ca17e56edbb24e91b5ce712a2759810238cccb904c24ca4c7214e3be8d0f9df2" status="verified" serial="20200630-01"/>
+	</game>
+	<game name="GunSlugs (World) (v2.0) (Digital) (Aftermarket) (Unl)" id="3439" cloneofid="3438">
+		<category>Games</category>
+		<description>GunSlugs (World) (v2.0) (Digital) (Aftermarket) (Unl)</description>
+		<rom name="GunSlugs (World) (v2.0) (Digital) (Aftermarket) (Unl).md" size="1048576" crc="ac3a064e" md5="d3e74e654462b3c076bae92e10dd7402" sha1="138820d733c0b878cb23e957e7caa89d90eba975" sha256="506686af7a857293d376e5263bb99fc8d83c6be363aa22a346018562ad5f0927" serial="20200630-01"/>
+	</game>
+	<game name="GunSlugs (World) (v2.1) (Digital) (Aftermarket) (Unl)" id="3440" cloneofid="3438">
+		<category>Games</category>
+		<description>GunSlugs (World) (v2.1) (Digital) (Aftermarket) (Unl)</description>
+		<rom name="GunSlugs (World) (v2.1) (Digital) (Aftermarket) (Unl).md" size="1048576" crc="1ea3b8e2" md5="66c080934e5f939e65e88052c08854cb" sha1="8060f0abf8a9d4b7437b5e8cb414d840d136dd9b" sha256="ed180291c535aae87eb5cda3f31a70082ad64c07e641cc0798d8adf0eb597429" serial="20200630-01"/>
+	</game>
+	<game name="GunSlugs (World) (Digital) (Aftermarket) (Unl)" id="3062" cloneofid="3438">
+		<category>Games</category>
+		<description>GunSlugs (World) (Digital) (Aftermarket) (Unl)</description>
+		<rom name="GunSlugs (World) (Digital) (Aftermarket) (Unl).md" size="4194304" crc="7697d655" md5="bcc5001549944e540b09733c0ff47f67" sha1="15a4b1bd1ff0c3e2bfbbc90cf1eae597baff5054" sha256="b32e1bad213d483902cd864ff7a02183c5778e04ba2f09a991801ef1f3343205" serial="20200630-01"/>
+	</game>
+	<game name="Handy Harvy (World) (Aftermarket) (Unl)" id="2670" cloneofid="3079">
+		<category>Games</category>
+		<description>Handy Harvy (World) (Aftermarket) (Unl)</description>
+		<rom name="Handy Harvy (World) (Aftermarket) (Unl).md" size="1048576" crc="eda45d8f" md5="30435205a9d812f0604ca5a6ae32b245" sha1="a5acb66a8711b21a9c172f696d4bf4f54724d575" sha256="ecd9335009897a4e0977932820a58b233aa6a1144eb54d707faba81056220930"/>
+	</game>
+	<game name="Handy Harvy (World) (Digital) (Aftermarket) (Unl)" id="3079">
+		<category>Games</category>
+		<description>Handy Harvy (World) (Digital) (Aftermarket) (Unl)</description>
+		<rom name="Handy Harvy (World) (Digital) (Aftermarket) (Unl).md" size="932864" crc="ceb61752" md5="dfadda094ecfc8afe54a3c133cd7f981" sha1="c00d941683ee00462782cb7b9b98a0eb416b987b" sha256="38082738876de19290a05450cc46f620ada53d7321f3788f058fc255b83ce1a5" serial="HHARVYSG-02"/>
+	</game>
+	<game name="Hangman SG (World) (Aftermarket) (Unl)" id="2862">
+		<category>Games</category>
+		<description>Hangman SG (World) (Aftermarket) (Unl)</description>
+		<rom name="Hangman SG (World) (Aftermarket) (Unl).md" size="444212" crc="828a67b0" md5="5bae8aca5dd8be4fb13aa43b8ee229ae" sha1="51d32544e59e76a063dc1e12a5a7464491eb5b93" sha256="4429001e5620f08721ca51e92290bf24113a573b12efdd6858380fea7b29be8d" serial="MK-0000 -00"/>
+	</game>
+	<game name="Kromasphere (World) (Aftermarket) (Unl)" id="3299" cloneofid="2668">
+		<category>Games</category>
+		<description>Kromasphere (World) (Aftermarket) (Unl)</description>
+		<rom name="Kromasphere (World) (Aftermarket) (Unl).md" size="2097152" crc="a254767b" md5="ae555e3d5d7d8533b56e7efcb6e94ff2" sha1="8f6aad51c5accdd89514159b073ae5ed968b9fbc" sha256="947396c2d5c78e5ecfab1efa65645477a76fac14a0b64326197d26210555481d" mia="yes"/>
+	</game>
+	<game name="Kromasphere (World) (Digital) (Aftermarket) (Unl)" id="2668">
+		<category>Games</category>
+		<description>Kromasphere (World) (Digital) (Aftermarket) (Unl)</description>
+		<rom name="Kromasphere (World) (Digital) (Aftermarket) (Unl).md" size="944886" crc="9dab89e3" md5="c859d2f0e844ba3ece6c599af817d6a6" sha1="da7ee4b6ebf2cdb4aa531cd16817d342b0bc2a5d" sha256="3a19fd9102d42315b0fef71c0e42f2ea95a9f64ff9f853fdb78e844a64f228b3" status="verified" serial="MK-0000-00"/>
+	</game>
+	<game name="Life on Earth - Reimagined (World) (Aftermarket) (Unl)" id="3231">
+		<category>Games</category>
+		<description>Life on Earth - Reimagined (World) (Aftermarket) (Unl)</description>
+		<rom name="Life on Earth - Reimagined (World) (Aftermarket) (Unl).md" size="4194304" crc="883552ad" md5="e2446e8df82e9101bd91a8c5a8d561e9" sha1="24f391b13308eaa8b170532a21ff439a777fbf17" sha256="43748376d9cb37a311fa1cf08e1f7ed01723e51b1a4ac07242e0610cdcbe74d5" serial="00000000-00"/>
+	</game>
+	<game name="Life on Mars (World) (Aftermarket) (Unl)" id="2859">
+		<category>Games</category>
+		<description>Life on Mars (World) (Aftermarket) (Unl)</description>
+		<rom name="Life on Mars (World) (Aftermarket) (Unl).md" size="4194304" crc="fd214116" md5="af3314ce16d4ef90da4901599909a926" sha1="1c074759f060199671099ebc8effe94abfe5c0bc" sha256="bc186bbca8fdccab1870c1e75e93b944daee5e0025486ed481b436c48675d916" status="verified"/>
+	</game>
+	<game name="Little Medusa (World) (Aftermarket) (Unl)" id="2482">
+		<category>Games</category>
+		<description>Little Medusa (World) (Aftermarket) (Unl)</description>
+		<rom name="Little Medusa (World) (Aftermarket) (Unl).md" size="2097152" crc="cbf43975" md5="10a5154c5c9047c1baa1f7d6f8a87932" sha1="6d7bbb1bbd64ba0373b1e5788231fdde13f365e4" sha256="33a7909e0f9a470e48e1017d881f06c48ee9ca9b53e24f14e98fabfd06258d66" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 22) (Aftermarket) (Unl)" id="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 22) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 22) (Aftermarket) (Unl).md" size="262144" crc="65396d2b" md5="f5ab9b9ab9d0b07a3041d2d969039a7a" sha1="b2901a08d9b74048cf9a44f3914cdd79fa04f469" sha256="16f4798096245e6a26f974ee791abef2e0396e53de310812bc159edc3eff29bc" status="verified" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 1) (Aftermarket) (Unl)" id="2750" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 1) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 1) (Aftermarket) (Unl).md" size="224980" crc="8539aa13" md5="3f0f3056f182101bcf60d29871fe18f6" sha1="39b05505ed224b0e0696ed3429bb00774e9e24f4" sha256="1e5963fc29b871ca5c7ce051754d3c273c0d1b39822ed349ec3eff03bc43f10b" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 2) (Aftermarket) (Unl)" id="2751" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 2) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 2) (Aftermarket) (Unl).md" size="102816" crc="fd324c6b" md5="dcc916e9cbd4931e102bf94b5d9e45da" sha1="0658bd1c514796b10dcf23f839bdd8de67737e9d" sha256="463ee4da91d9b4ecf8a9e4ef4654384c2d8bbac2aa32523dc4b4bc5df765713d" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 3) (Aftermarket) (Unl)" id="2752" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 3) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 3) (Aftermarket) (Unl).md" size="136108" crc="8524c65b" md5="999abf2b7a39df968a879a862d1fc726" sha1="ae3fcd7775252734776fd305303903bebba9723a" sha256="0b6924f5b2aea9dcfbb40ff0222daa0a01747e643d617904cca604bfcc5a71d3" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 4) (Aftermarket) (Unl)" id="2753" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 4) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 4) (Aftermarket) (Unl).md" size="196832" crc="150d39b5" md5="8831de58c996ae3369c3f41634cebc02" sha1="12159d133d3cbaf97ec3c5f2f498d2407ced9496" sha256="af65d968f2beab76fa9e43b0f891bc973b9890cba7710062d6edcba0c2c5c114" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 5) (Aftermarket) (Unl)" id="2754" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 5) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 5) (Aftermarket) (Unl).md" size="218360" crc="3c9805e9" md5="c3d65b17c700c90d17921789dd2af9b4" sha1="50a240d5cd564005012ff526d97173fe435f537a" sha256="de7f8efda03e571356f88a9d5ee293f01cc842c151c5bf4ab5fbd188b5bfee36" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 6) (Aftermarket) (Unl)" id="2755" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 6) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 6) (Aftermarket) (Unl).md" size="131072" crc="4fc208aa" md5="efce47315a7bfc25fe021af462ec71d6" sha1="cdb1ecb6abd5acfdf82bc4556ff4d95d4da4dd6e" sha256="8482da3a1c11ad449bfa06b6f71ee021cacb826ddfbfc3ddd78885dbd852330f" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 7) (Aftermarket) (Unl)" id="2756" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 7) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 7) (Aftermarket) (Unl).md" size="262144" crc="a4b78d13" md5="c49149368119972ba896921dc294615a" sha1="54f1f31537bf4d2e5747bf2820e4f7a728bec94b" sha256="0289b92eb6e3931aefa5897a6c9e9c96f42a327bf236c481e6a44fd13a92b919" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 8) (Aftermarket) (Unl)" id="2757" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 8) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 8) (Aftermarket) (Unl).md" size="262144" crc="472af526" md5="48d30d5a19436ba9293a68bd5c56a6b7" sha1="5d3aab9530206f2a5ec0b0ccc70231018a23b4e4" sha256="984a618063a224e408bf1c8c1da5e4cb590d4f28c4d26245d498a2525aaeeaa9" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 9) (Aftermarket) (Unl)" id="2758" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 9) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 9) (Aftermarket) (Unl).md" size="262144" crc="e0219b06" md5="688ccaeb0551a9a9d6465e3220b29ae0" sha1="3fe61ec3cf4e54f9113491e75426d75f77b0e254" sha256="9991630ad5ac8242f3af2e058104e005db16d7c97a10c7a0540a94777f9564c6" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 10) (Aftermarket) (Unl)" id="2759" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 10) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 10) (Aftermarket) (Unl).md" size="262144" crc="728ce8cb" md5="70418af16a8ee9260f744683919da31b" sha1="7176dfe86890aa201d9449b2513c8c8032b1656b" sha256="64bb19dee6db7d4a29ab460424f335f9136c617038a96a44304ea1142a8b06c5" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 11) (Aftermarket) (Unl)" id="2760" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 11) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 11) (Aftermarket) (Unl).md" size="262144" crc="94d43cb9" md5="6d3581b66b34de8808870dc42d7d4da4" sha1="583d756b22d1c14da3758ee9b9b71dbe7901c210" sha256="b197ce634e10240338b2231a00fb809f2e30781aa6c255e7804c8e5c493f74a2" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 12) (Aftermarket) (Unl)" id="2761" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 12) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 12) (Aftermarket) (Unl).md" size="262144" crc="4f7aedf9" md5="527841025887a69041c9cfba83b7e6f8" sha1="559ed7a7ea1f52c46bfef067424a9d169dac3c67" sha256="4d4a100a34b6d962670a2173c1b1fd6fbde30bf5c2beddeff7c434381552b39a" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 13) (Aftermarket) (Unl)" id="2762" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 13) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 13) (Aftermarket) (Unl).md" size="262144" crc="7b8556d5" md5="44c7e43296c12c01b73fe93bed927f8b" sha1="d2e08d00d896971436f929677be3c1872bdd7c90" sha256="2ce92cd00826799f7b949e95dd4cadf67a833599ae7ddb028a6bf3387c063a72" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 14) (Aftermarket) (Unl)" id="2763" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 14) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 14) (Aftermarket) (Unl).md" size="262144" crc="b330ac43" md5="6558e51ab002483c4e0500054bd41a5d" sha1="6839b36ae1afdccef6535e073967e6d7e01cbb48" sha256="0b87890a93529be462c44f7ba0e73a52b7177209159d4607e87fd7801b285796" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 15) (Aftermarket) (Unl)" id="2764" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 15) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 15) (Aftermarket) (Unl).md" size="262144" crc="cdbd879e" md5="33e3e9ab096a8560e0473a47eb1b3789" sha1="c48ee604bfb16af66acd615feff3c2ec226cf467" sha256="415e69ed4f7ae1692aa0a9381ffc7d5086b4bc32ee39dc32c98fa04ef4d636a2" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 16) (Aftermarket) (Unl)" id="2765" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 16) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 16) (Aftermarket) (Unl).md" size="262144" crc="c3097b96" md5="12e3d676ec2f842d09e9e574f23b5e42" sha1="37f2f721637fad5635ac460ea5cd13f14ad2179d" sha256="e63ba043815dbf246f01177a4c8a4ce3e3f5b210aab74c5ed7bd0439614eb37e" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 17) (Aftermarket) (Unl)" id="2766" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 17) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 17) (Aftermarket) (Unl).md" size="262144" crc="68cb2c22" md5="16bf57387bf2ea8fde5173979a2d17a3" sha1="da3c1fd0a08fb530b2db63a171a6a53abc54eb4f" sha256="cf370573c9105bd9034af000761964249286308aa6eee37be1e7598f62b956ce" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 18) (Aftermarket) (Unl)" id="2767" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 18) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 18) (Aftermarket) (Unl).md" size="262144" crc="b604d09c" md5="8149095b75cf835133e951c48c529995" sha1="efdd20c90c0f4d9fbbba013800556b723df88117" sha256="ba955b32fd43f0f38660b834ceb475e42b7aefb3b94324e9a949b913152d9c6c" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 19) (Aftermarket) (Unl)" id="2768" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 19) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 19) (Aftermarket) (Unl).md" size="262144" crc="78848dcd" md5="06cfcd070c4d257f4aa22f879620c2b1" sha1="adecab2a5ba25a5fb86c5e28390aac50f28a1921" sha256="c3016bf1bd35afe0fa961b79125ac5b4d69d00aa1118d4ff4263ab3127a1f309" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 20) (Aftermarket) (Unl)" id="2769" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 20) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 20) (Aftermarket) (Unl).md" size="262144" crc="9ea1cb02" md5="1d14f00914dd3d01e275b92f37cd72c5" sha1="5d794bf41aceb50c0e7f44ce329a915a52279d62" sha256="5fd3a836594ca816474c38533c2003381a156529f10748939031361c89f25f1e" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 21) (Aftermarket) (Unl)" id="2770" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 21) (Aftermarket) (Unl)</description>
+		<game_id>Revision v0.3</game_id>
+		<rom name="LIZARDPAINT (World) (Proto 21) (Aftermarket) (Unl).md" size="262144" crc="9d0bcd24" md5="5545f7a513eabf68ce8dae14b21dad08" sha1="69ec9754a64a9566873b467834a57f051d682225" sha256="b69e49b3cccee55e5d3a3fa073b6bda88fe1a13ca526adc715427faf19902c12" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 23) (Aftermarket) (Unl)" id="2771" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 23) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 23) (Aftermarket) (Unl).md" size="262144" crc="1a42b559" md5="61f36f5f39466d41aaca5ff62b22ab0b" sha1="9fbc961f106d8802bd1fc412a7a40a11932347f5" sha256="74a5b7c2cc6c53b20ea0962516946836ba6f479a8f0407bb34ed08f589a76b67" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 24) (Aftermarket) (Unl)" id="2772" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 24) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 24) (Aftermarket) (Unl).md" size="262144" crc="b5109601" md5="2d85209469fca740a9b7b34028a2ebce" sha1="13fd0387ddd617c9d5dfaf7d860739ba3922eef3" sha256="f48b6acba2d91786959ff8b59d4f302004f9c837affb6b543bf126401b6f413f" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 25) (Aftermarket) (Unl)" id="2773" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 25) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 25) (Aftermarket) (Unl).md" size="262144" crc="c8b274bd" md5="938fb6c42271c17083fb5cd1152eb952" sha1="de07e4e4cbb29b724f425f58e646a17701ec79ca" sha256="62d580fb90a7cdf6a448a8eb4a29cfaf5a6cf7114f3ce737dbd75624baaf6b73" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 26) (Aftermarket) (Unl)" id="2774" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 26) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 26) (Aftermarket) (Unl).md" size="262144" crc="c87b3e85" md5="613b90312a1b1efe711d768da1e70f58" sha1="9f316d3a9f6a9eb08d8eaaec8a866f5fc9f4057c" sha256="d79c9ada256024499b5c7d5136a3099a8e70a12cf3a5c2c3ad70991eee42aeb8" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 27) (Aftermarket) (Unl)" id="2775" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 27) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 27) (Aftermarket) (Unl).md" size="262144" crc="28801447" md5="d5659e972cb494d796daae1f8141ef77" sha1="d9ef1ac577c19779417aa2f2ec9649a5412c7470" sha256="340358274e6d6cf05edfbbe134252b1bc6f0c07f534f251c68c1433860b38802" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 28) (Aftermarket) (Unl)" id="2776" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 28) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 28) (Aftermarket) (Unl).md" size="393216" crc="98af339b" md5="229b2a87b1e3c7068ce15582fd45d929" sha1="85a90f043a77a7d958bcd1edf92f05a262110c04" sha256="05857d980e1677dc5c47ba669dd95ed9ccb2d7fe308189294afcbd841d6bf19f" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 29) (Aftermarket) (Unl)" id="2777" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 29) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 29) (Aftermarket) (Unl).md" size="393216" crc="58078348" md5="73d8c5ae791456a047c23c7eec61e9be" sha1="f29209a166bbfbc83f14c97c3738d1b5172d6ebf" sha256="7276e0616f7b84fa8fd0cbe1d15afcb233e5899dabd5e185d169601e7d861b53" serial="00000000-00"/>
+	</game>
+	<game name="LIZARDPAINT (World) (Proto 30) (Aftermarket) (Unl)" id="2784" cloneofid="2721">
+		<category>Applications</category>
+		<description>LIZARDPAINT (World) (Proto 30) (Aftermarket) (Unl)</description>
+		<rom name="LIZARDPAINT (World) (Proto 30) (Aftermarket) (Unl).md" size="393216" crc="f3b8fc10" md5="07f24ba589de99a8a33b3ccc479104e5" sha1="281ca5e9394a2dc5097ad7ece9cdd8208cd52c27" sha256="2a592eb4cb0893053a146189a855b3fb37618c44f97a61706c61ad61c6b18192" serial="00000000-00"/>
+	</game>
+	<game name="Magic Pockets (USA, Europe) (Aftermarket) (Unl)" id="2484">
+		<description>Magic Pockets (USA, Europe) (Aftermarket) (Unl)</description>
+		<rom name="Magic Pockets (USA, Europe) (Aftermarket) (Unl).md" size="4194304" crc="2fe82e73" md5="8b851ade6a3cee0868536dc334b4a330" sha1="d7cf1aea54620835895b3782168d7b0bf0db46bc" sha256="643ae659560212891ce7b4a8566a398d441745255cb57f94238ea42cf4d95bb5" serial="00000000-00"/>
+	</game>
+	<game name="Mega 3D Noah's Ark (USA) (Aftermarket) (Unl)" id="2586">
+		<description>Mega 3D Noah's Ark (USA) (Aftermarket) (Unl)</description>
+		<rom name="Mega 3D Noah's Ark (USA) (Aftermarket) (Unl).md" size="2097152" crc="409165c2" md5="c332cf402e2198f4b1a18adf47df1d07" sha1="98491dfce3cbe72cd550161c1ffc6de1f337361e" sha256="a668139e97183f8ef5452fd3923072bb5d753d10c371cfafe46fcdf5e2fd1eeb" serial="GS-MNOA-01"/>
+	</game>
+	<game name="Mega Marble World (USA, Europe) (Aftermarket) (Unl)" id="2595">
+		<category>Games</category>
+		<description>Mega Marble World (USA, Europe) (Aftermarket) (Unl)</description>
+		<rom name="Mega Marble World (USA, Europe) (Aftermarket) (Unl).md" size="2621440" crc="438c7511" md5="67f3770662b804ed25543d46a0f7b3e3" sha1="11abaf8c3417df2af16ce157c319db8de3297cbc" sha256="5e437a693aa301d28d3d6d51a143173dc2606ca0f0d070895b3f579e8ea3d456" serial="MK-0000-00"/>
+	</game>
+	<game name="Mega Marble World 2 (World) (En,Fr,De,Es,It,Pt,Ru,Tr) (v1.0.3) (Digital) (Aftermarket) (Unl)" id="3065">
+		<category>Games</category>
+		<description>Mega Marble World 2 (World) (En,Fr,De,Es,It,Pt,Ru,Tr) (v1.0.3) (Digital) (Aftermarket) (Unl)</description>
+		<rom name="Mega Marble World 2 (World) (En,Fr,De,Es,It,Pt,Ru,Tr) (v1.0.3) (Digital) (Aftermarket) (Unl).md" size="1507328" crc="68222004" md5="bab07c5cee7e2e2c31ea0ffd9263a1d2" sha1="07efaffdca46cb54c23fca23729d845897ef0c4c" sha256="b1decbd47f6871fb8ed2259fa897be643576bf4f4a57380afdbdf8c9752fa099" serial="MK-0000-00"/>
+	</game>
+	<game name="Mega Slow Mole (World) (Aftermarket) (Unl)" id="3493">
+		<category>Games</category>
+		<description>Mega Slow Mole (World) (Aftermarket) (Unl)</description>
+		<rom name="Mega Slow Mole (World) (Aftermarket) (Unl).md" size="2621440" crc="0c53cda2" md5="5e0672d81b89fd4c1318e7f6b4058f7e" sha1="79be396c57baa464b241cad018e4a3e0ce76a8c6" sha256="44ea4eae39b2f019022a03b5891d755fc2a39e83fb04c151e835613bdddc4a9a" serial="00000000-00"/>
+	</game>
+	<game name="Mega Slow Mole (World) (Beta 2) (Aftermarket) (Unl)" id="2920" cloneofid="3493">
+		<category>Games</category>
+		<category>Preproduction</category>
+		<description>Mega Slow Mole (World) (Beta 2) (Aftermarket) (Unl)</description>
+		<rom name="Mega Slow Mole (World) (Beta 2) (Aftermarket) (Unl).md" size="1966080" crc="72f504b7" md5="e6425fb0eace48f3c1d0e03a73bc4d86" sha1="5c966233a5ff7dd7bfc30737e3a3bda145f0107b" sha256="facf59454a35918e894fc21f9620349823851e0807e2d3099098226008c676c5" status="verified" serial="00000000-00"/>
+	</game>
+	<game name="Mega Slow Mole (World) (Beta 1) (Aftermarket) (Unl)" id="2922" cloneofid="3493">
+		<category>Games</category>
+		<category>Preproduction</category>
+		<description>Mega Slow Mole (World) (Beta 1) (Aftermarket) (Unl)</description>
+		<rom name="Mega Slow Mole (World) (Beta 1) (Aftermarket) (Unl).md" size="1966080" crc="f4ce72ad" md5="a5a09267389b5d669811ab44c2a323ec" sha1="55cdfef8a2ccc00eefa3fced17234f942f4e3460" sha256="f272e81a0b61e1d537f73b6ddb7d3e9e1dfe3a2862cfb608d0c33a460b11881d" serial="00000000-00"/>
+	</game>
+	<game name="Mega Slow Mole (World) (Demo 1) (Aftermarket) (Unl)" id="2923" cloneofid="3493">
+		<category>Demos</category>
+		<category>Games</category>
+		<description>Mega Slow Mole (World) (Demo 1) (Aftermarket) (Unl)</description>
+		<rom name="Mega Slow Mole (World) (Demo 1) (Aftermarket) (Unl).md" size="524288" crc="251ee6fd" md5="18503bd0080440e199a7e054ff93ac9d" sha1="c0db16af14fdf46679be20c130f09c3b22dc346f" sha256="c152142e0818781e030d2a02a9d06ab2234afb963d2354ce00b3ad0e46a62b33" serial="00000000-00"/>
+	</game>
+	<game name="Mega Slow Mole (World) (Demo 2) (Aftermarket) (Unl)" id="2925" cloneofid="3493">
+		<category>Demos</category>
+		<category>Games</category>
+		<description>Mega Slow Mole (World) (Demo 2) (Aftermarket) (Unl)</description>
+		<rom name="Mega Slow Mole (World) (Demo 2) (Aftermarket) (Unl).md" size="524288" crc="81b5ddd4" md5="f41191ca1440dd925d56785aa1f9b859" sha1="217d2a02e1b483655306615c6f9da77ba28b90f4" sha256="d091e66f43aa5ef07305f25addbe52790ec34a5f75723c960fde0f968d5a334f" serial="00000000-00"/>
+	</game>
+	<game name="Metal Dragon (World) (Aftermarket) (Unl)" id="2798">
+		<description>Metal Dragon (World) (Aftermarket) (Unl)</description>
+		<rom name="Metal Dragon (World) (Aftermarket) (Unl).md" size="2097152" crc="9536280f" md5="7ddc58f16c903916adaf3ffd5ecdb3f1" sha1="c7de8a143224db4a9e833c82393859d14cb5d922" sha256="76f02f4106950e7794e13807ec516bb7ffae7d73d3a264c635fc5e98400ec51f"/>
+	</game>
+	<game name="Pac-Man (World) (Aftermarket) (Unl)" id="2878">
+		<category>Games</category>
+		<description>Pac-Man (World) (Aftermarket) (Unl)</description>
+		<rom name="Pac-Man (World) (Aftermarket) (Unl).md" size="262144" crc="0e75af51" md5="62441a345b1abe7501d2141efa291c8c" sha1="ebc89399f156d1a2ef3021fff23b9ba5b757332b" sha256="5d5242a3a01cf85474cae7e823018396ecaf0b704c6aa7e37df3d3d811bddf1c" serial="GM 00000000-00"/>
+	</game>
+	<game name="Papi Commando - Second Blood (World) (Aftermarket) (Unl)" id="3070">
+		<category>Games</category>
+		<description>Papi Commando - Second Blood (World) (Aftermarket) (Unl)</description>
+		<rom name="Papi Commando - Second Blood (World) (Aftermarket) (Unl).md" size="2898250" crc="be7716af" md5="8cad9b258237f29f4fa89ec90adb7c49" sha1="f579b9dd819a496dab30884a8348f225ee46bb3b" sha256="744b0ee4df68bbfe8f7672d4ebd6b6a4aa03d6fd935c0fe51c69ec1c6de024ee" serial="MK-0000-00"/>
+	</game>
+	<game name="Papi Commando Reload - TECTOY Demo (World) (Demo) (Aftermarket) (Unl)" id="2638">
+		<category>Games</category>
+		<category>Preproduction</category>
+		<description>Papi Commando Reload - TECTOY Demo (World) (Demo) (Aftermarket) (Unl)</description>
+		<rom name="Papi Commando Reload - TECTOY Demo (World) (Demo) (Aftermarket) (Unl).md" size="1572864" crc="d73e6ad5" md5="d6c097ffe065f04b010363adab11e207" sha1="851d760cf48eb847bd2c0bdf39d9733facb7944e" sha256="23f8e403b621485360454ede07aa142fab6b9c09546d7fe89f0bfc7ca525b730" serial="00000000-00"/>
+	</game>
+	<game name="Retro Games Hunters (World) (Demo 2) (Aftermarket) (Unl)" id="3445">
+		<category>Demos</category>
+		<category>Games</category>
+		<description>Retro Games Hunters (World) (Demo 2) (Aftermarket) (Unl)</description>
+		<rom name="Retro Games Hunters (World) (Demo 2) (Aftermarket) (Unl).md" size="2752512" crc="8ae9a7a3" md5="4326a240d4b5ddc26a0b7e64777ba87d" sha1="9f28e714bde4bfe93b1aa524235e77cf332fb2f3" sha256="dbb91d2facfac07123326c056ee485f9ddd9c449217faf73aed8106dc9dacd0a"/>
+	</game>
+	<game name="Retro Games Hunters (World) (Demo) (Aftermarket) (Unl)" id="3446" cloneofid="3445">
+		<category>Demos</category>
+		<category>Games</category>
+		<description>Retro Games Hunters (World) (Demo) (Aftermarket) (Unl)</description>
+		<rom name="Retro Games Hunters (World) (Demo) (Aftermarket) (Unl).md" size="2752512" crc="691e5c88" md5="94b8354915bb26e1c4912b26d7bec724" sha1="c34a6a8d69495d642df5e6555b8114e60b7b190b" sha256="68eddb68628cdf4f97050d35f494524f9cee90ca6e4622c08f016ac21f3f358c" mia="yes"/>
+	</game>
+	<game name="Rocket Panda - Into the Unknown (World) (Aftermarket) (Unl)" id="3071">
+		<category>Games</category>
+		<description>Rocket Panda - Into the Unknown (World) (Aftermarket) (Unl)</description>
+		<rom name="Rocket Panda - Into the Unknown (World) (Aftermarket) (Unl).md" size="1876693" crc="70ce45df" md5="6f44080c43dbe4e50b5049db1547493c" sha1="2fad19d709ab5330b89a66610b8b6572b802f0e2" sha256="adf57f8b40d3041b9a1990085c4643fb8e5da37e26e1705fa525f67bbd2328b0" serial="20200630-00"/>
+	</game>
+	<game name="Romeow and Julicat (USA, Europe) (Aftermarket) (Unl)" id="2996">
+		<category>Games</category>
+		<description>Romeow and Julicat (USA, Europe) (Aftermarket) (Unl)</description>
+		<rom name="Romeow and Julicat (USA, Europe) (Aftermarket) (Unl).md" size="2097152" crc="46f895d5" md5="e56fc69b81da8bc8768af31e795b872e" sha1="25c1ae2a1a20f782ae86c5b8db5b28c16e4dd1b3" sha256="fe42e2bbd1919b48d28db5b3991b098fa629f076b0cf05451f4f76e3125a9789" status="verified" header="00000000-00"/>
+	</game>
+	<game name="Sacred Line Genesis (World) (v1.1.9) (Aftermarket) (Unl)" id="3244" cloneofid="2671">
+		<category>Games</category>
+		<description>Sacred Line Genesis (World) (v1.1.9) (Aftermarket) (Unl)</description>
+		<rom name="Sacred Line Genesis (World) (v1.1.9) (Aftermarket) (Unl).md" size="4194304" crc="80d8f0cc" md5="83fa9fe9fc5d215228ba56a3086e0428" sha1="15296f0e3d19845335bf615b90e1405cd06f22b3" sha256="356a4c194b33dfc1d48ea18621dc97d1a41c30b0227cb6ff5aa7d635b1b81499" mia="yes" serial="00000005-00"/>
+	</game>
+	<game name="Sacred Line Genesis (World) (v1.1.9) (Digital) (Aftermarket) (Unl)" id="2671">
+		<description>Sacred Line Genesis (World) (v1.1.9) (Digital) (Aftermarket) (Unl)</description>
+		<rom name="Sacred Line Genesis (World) (v1.1.9) (Digital) (Aftermarket) (Unl).md" size="3534836" crc="2e029ab4" md5="0b729aad9a4409b9faa4556d35993f72" sha1="da422258b392d40f7ed68103f87dc6815c20d075" sha256="e4076ec737f98939e407f307663243fcf01994c5f1fe958c0fc11402f43d6efa" serial="00000005-00"/>
+	</game>
+	<game name="Sacred Line Genesis (World) (Aftermarket) (Unl)" id="2693" cloneofid="2671">
+		<description>Sacred Line Genesis (World) (Aftermarket) (Unl)</description>
+		<rom name="Sacred Line Genesis (World) (Aftermarket) (Unl).md" size="4194304" crc="06b219c0" md5="51f6719469108cbae859a9fc00cc5aae" sha1="3d09c0ea4cdc03178f0dc18cb8c9af032fe56037" sha256="9011e279e117c1179ab828ebd95e2b962844c4b83e2d2f267f44c6156ff82f01"/>
+	</game>
+	<game name="Sacred Line Genesis (World) (v1.1.9) (Legacy Edition) (Aftermarket) (Unl)" id="2876" cloneofid="2671">
+		<category>Games</category>
+		<description>Sacred Line Genesis (World) (v1.1.9) (Legacy Edition) (Aftermarket) (Unl)</description>
+		<rom name="Sacred Line Genesis (World) (v1.1.9) (Legacy Edition) (Aftermarket) (Unl).md" size="3539648" crc="7c0b1924" md5="0337844d1d20f8b162f33e42f8fc6b71" sha1="3eb020df2f2c3630557a4b292855a03197b83d4c" sha256="a6adbe161c2a4e6bbfecfc0527d4636b521f56de4ae45ab92290ed2e3906b809" mia="yes" serial="00000005-00"/>
+	</game>
+	<game name="Sacred Line II (World) (v1.0.1) (Unique Pack) (Aftermarket) (Unl)" id="2874" cloneofid="3245">
+		<category>Games</category>
+		<description>Sacred Line II (World) (v1.0.1) (Unique Pack) (Aftermarket) (Unl)</description>
+		<rom name="Sacred Line II (World) (v1.0.1) (Unique Pack) (Aftermarket) (Unl).md" size="3979924" crc="f0d03f78" md5="294c2a93927b9ac7de60147b5492deed" sha1="6c417db00d653a155ab443e290766a93e9ce272f" sha256="6be830b924a29de5dfc5225e617b3472b03e28dad340a9c9d194567c0cf7f854" mia="yes" serial="00000005-00"/>
+	</game>
+	<game name="Sacred Line II (World) (v1.02) (Digital) (Aftermarket) (Unl)" id="3243" cloneofid="3245">
+		<category>Games</category>
+		<description>Sacred Line II (World) (v1.02) (Digital) (Aftermarket) (Unl)</description>
+		<rom name="Sacred Line II (World) (v1.02) (Digital) (Aftermarket) (Unl).md" size="3979616" crc="2121d724" md5="378c28a0f2421a3918ba0c66391bfdab" sha1="d37fed3ac4083b09fa9b3decb228b7538d8e3ad1" sha256="fd8ee69b1bbef76acfe318d3d53c5cf3ffa4726dba63e02ccd813e4375c06263" status="verified" serial="GM 00000005-00"/>
+	</game>
+	<game name="Sacred Line II (World) (v1.02) (Aftermarket) (Unl)" id="3245">
+		<category>Games</category>
+		<description>Sacred Line II (World) (v1.02) (Aftermarket) (Unl)</description>
+		<rom name="Sacred Line II (World) (v1.02) (Aftermarket) (Unl).md" size="4194304" crc="c03abced" md5="5ddd4d38d92284de01e8e96d8946eda6" sha1="1c54b97da3270374d02193f71ee404e505bcf8fc" sha256="f8c080117c4ee62c1382ec5b37aec6737689b3c97cd7f5f2c5416e01d94bfb06"/>
+	</game>
+	<game name="Sacred Line II - A Distant Light (World) (Aftermarket) (Unl)" id="3303">
+		<category>Games</category>
+		<description>Sacred Line II - A Distant Light (World) (Aftermarket) (Unl)</description>
+		<rom name="Sacred Line II - A Distant Light (World) (Aftermarket) (Unl).md" size="1147448" crc="8e84c7bd" md5="2e0ed0e9478e10c6b6434b6a264678f6" sha1="8d290a705dbb1fe68a6101bf08af01f5a356d3ea" sha256="5c1ed4764f377b5fb0d47e71c7e6a939784d7fc77a1dfffb1ae2424533f3d0a6" status="verified" serial="00000005-00"/>
+	</game>
+	<game name="Sacred Line Zero (World) (Proto 1) (Aftermarket) (Unl)" id="2877" cloneofid="3245">
+		<category>Games</category>
+		<category>Preproduction</category>
+		<description>Sacred Line Zero (World) (Proto 1) (Aftermarket) (Unl)</description>
+		<rom name="Sacred Line Zero (World) (Proto 1) (Aftermarket) (Unl).md" size="2167704" crc="72f4f07b" md5="9ec5c6fdabaccae09ae259f409273f18" sha1="8d7b402bfd1c38e8562d69c02a01dac161107ba0" sha256="14500fd9a9a51284aa5293c001ef986ebbf0556f287dfb629f3ca5f077759eb2" serial="GM 00000005-00"/>
+	</game>
+	<game name="Satyr in Hell, A (World) (Cart) (Aftermarket) (Unl)" id="2926" cloneofid="3452">
+		<category>Games</category>
+		<description>Satyr in Hell, A (World) (Cart) (Aftermarket) (Unl)</description>
+		<rom name="Satyr in Hell, A (World) (Cart) (Aftermarket) (Unl).md" size="1048576" crc="2f105cee" md5="f41d462acc769b0bccc06b355946c679" sha1="72a34847fb5864c2a9c495b01df5ef2a11400f75" sha256="3f92bf362579d5e21ac3860e787cc52996ffbe3f63547c70f515905c75e72fec" mia="yes" serial="00000005-00"/>
+	</game>
+	<game name="Space Flies Attack (World) (Digital) (Aftermarket) (Unl)" id="3072">
+		<category>Games</category>
+		<description>Space Flies Attack (World) (Digital) (Aftermarket) (Unl)</description>
+		<rom name="Space Flies Attack (World) (Digital) (Aftermarket) (Unl).md" size="1376256" crc="8ebed810" md5="f288cae9ba0d558ff5cacf0bb3a2ffa4" sha1="64089a2382e14b22a2dfdd9788a3efed168c4d48" sha256="a3c106cc28ce87963e80ef4886bad38d0a36c4d059c446cdc8cfd32c5389defa" serial="MK-0000-00"/>
+	</game>
+	<game name="Spax (World) (Aftermarket) (Unl)" id="3073">
+		<category>Games</category>
+		<description>Spax (World) (Aftermarket) (Unl)</description>
+		<rom name="Spax (World) (Aftermarket) (Unl).md" size="842240" crc="af859ad5" md5="c04e72ff4e96ff72fa57a76c177a4a6e" sha1="9c91c86dd6b116cddc01d654ee5e0b2c9f8ba030" sha256="2088a4411a76ca8d6afa3c587db69a2cb1fe561b48a8055e631c3bbf841efe8d" serial="00000000-00"/>
+	</game>
+	<game name="Super Heavy Duty (World) (Aftermarket) (Unl)" id="2626">
+		<category>Games</category>
+		<description>Super Heavy Duty (World) (Aftermarket) (Unl)</description>
+		<rom name="Super Heavy Duty (World) (Aftermarket) (Unl).md" size="4194304" crc="81f8e890" md5="90bad6828beef6b866f9dcf450c04aa9" sha1="071a44877dc2bb94284f11d4809cf30f1b811b08" sha256="a94a17909d60825de701f356b00d51ee2ad2b66407a16ad9c795b1939d47f955" serial="NAUT01R1-01"/>
+	</game>
+	<game name="Switchblade (World) (Aftermarket) (Unl)" id="2488">
+		<description>Switchblade (World) (Aftermarket) (Unl)</description>
+		<rom name="Switchblade (World) (Aftermarket) (Unl).md" size="1048576" crc="6e25aa2e" md5="083033ff45ebe5a8de81dfc03d485195" sha1="9ddab08edc91fca806d7ada9157fc34ddb92fe64" sha256="09acd394c20227580bb8b40d9bc210e25a5e228fb2c5a6bcd216ef0169c5265e" status="verified"/>
+	</game>
+	<game name="Tanglewood (World) (GOG, Itch.io) (Aftermarket) (Unl)" id="2489" cloneofid="2537">
+		<category>Games</category>
+		<description>Tanglewood (World) (GOG, Itch.io) (Aftermarket) (Unl)</description>
+		<rom name="Tanglewood (World) (GOG, Itch.io) (Aftermarket) (Unl).md" size="4194304" crc="1a91c419" md5="b684990797358eb247bfc466ea606292" sha1="128b547cad971434e6dd815d1c65a268d826d831" sha256="fcd9f37a0a283b0dc28d4059f0d5c8cb9b3911797ca0188c028ed80bd732b50e" status="verified" serial="EVIL0106-00"/>
+	</game>
+	<game name="Tanglewood (World) (Aftermarket) (Unl)" id="2537">
+		<category>Games</category>
+		<description>Tanglewood (World) (Aftermarket) (Unl)</description>
+		<rom name="Tanglewood (World) (Aftermarket) (Unl).md" size="4194304" crc="2b914b3b" md5="8f50069edeb5022f0003fa1461a89545" sha1="7021e58d634c7704b0fab10db401b2a49e842706" sha256="aa505497302928c692bb9e280444ea87f77d2d6a77ac70cfaf103fbbc812865e" serial="EVIL0106-00"/>
+	</game>
+	<game name="Tanglewood (World) (GOG) (Windows) (Aftermarket) (Unl)" id="2864" cloneofid="2537">
+		<category>Games</category>
+		<description>Tanglewood (World) (GOG) (Windows) (Aftermarket) (Unl)</description>
+		<rom name="Tanglewood (World) (GOG) (Windows) (Aftermarket) (Unl).md" size="4194304" crc="ed654373" md5="1cdc2ffc611c36f280c7d526d6c95d03" sha1="a70fd6a3b06c8ee89a77c3f90240455e558c4cfe" sha256="122332569b36196c6a32753be43f499b03ad1f01de13172a772a8b0b34b73864" serial="GM EVIL0106-00"/>
+	</game>
+	<game name="Tanglewood OST (World) (Digital) (Aftermarket) (Unl)" id="3003">
+		<category>Audio</category>
+		<description>Tanglewood OST (World) (Digital) (Aftermarket) (Unl)</description>
+		<rom name="Tanglewood OST (World) (Digital) (Aftermarket) (Unl).md" size="834560" crc="15936800" md5="0c667aaf27000ab0b61988d639002886" sha1="eb08c2a1c2eac213985506746189ced51b099ff8" sha256="3bbd43d41551a173de9d0cc0111065a0cfc90ee2a00ae8766ca672eca30a2990" serial="EVIL0106-00"/>
+	</game>
+	<game name="Tanzer (World) (Aftermarket) (Unl)" id="2491" cloneofid="2964">
+		<category>Games</category>
+		<description>Tanzer (World) (Aftermarket) (Unl)</description>
+		<rom name="Tanzer (World) (Aftermarket) (Unl).md" size="4194304" crc="237299a8" md5="3a6effb7eb7e17a84957b7c2ba6c61ca" sha1="db7f56f0c03ead520a8ba7e260becb10622ede12" sha256="05f19c54f3a97e874433d42a9fedb6677584f1786d27fe20fa2394e0cb5c00a8" status="verified" serial="00000000-00"/>
+	</game>
+	<game name="Tanzer (World) (Demo) (Kickstarter) (Aftermarket) (Unl)" id="2575" cloneofid="2964">
+		<category>Demos</category>
+		<category>Games</category>
+		<description>Tanzer (World) (Demo) (Kickstarter) (Aftermarket) (Unl)</description>
+		<rom name="Tanzer (World) (Demo) (Kickstarter) (Aftermarket) (Unl).md" size="2097152" crc="f8a31c40" md5="5c5b6e0ece95f276c6d920e4ede899d2" sha1="1de6bd6471cd0d9dc22df4ee25a5065f7f359ff7" sha256="6c02a9772319a762d346c1ddbb4c15427e679b7410f47fc1895a91a3f348ba70" status="verified"/>
+		<rom name="Tanzer (World) (Demo) (Kickstarter) (Aftermarket) (Unl).md" size="2097152" crc="f8a31c40" md5="5c5b6e0ece95f276c6d920e4ede899d2" sha1="1de6bd6471cd0d9dc22df4ee25a5065f7f359ff7" sha256="6c02a9772319a762d346c1ddbb4c15427e679b7410f47fc1895a91a3f348ba70" status="verified"/>
+	</game>
+	<game name="Technoptimistic (World) (Strictly Limited Games) (Aftermarket) (Unl)" id="2860">
+		<category>Audio</category>
+		<description>Technoptimistic (World) (Strictly Limited Games) (Aftermarket) (Unl)</description>
+		<rom name="Technoptimistic (World) (Strictly Limited Games) (Aftermarket) (Unl).md" size="4194304" crc="78b3e79d" md5="833f5ca51c372696da53c285779cb96c" sha1="c9e06008224337b6190da1826d347a78fc1bfa1c" sha256="07c4b4f135a4d973f6da26ff534c2449cd939924ddcb10a813a23d2aef5bb442"/>
+	</game>
+	<game name="Technoptimistic (World) (Aftermarket) (Unl)" id="2927" cloneofid="2860">
+		<category>Audio</category>
+		<description>Technoptimistic (World) (Aftermarket) (Unl)</description>
+		<rom name="Technoptimistic (World) (Aftermarket) (Unl).md" size="4194304" crc="2daf3a81" md5="51fdfb35309a3cf8032f467afa748588" sha1="6ffe286d86e1a9b0796f8daba1a9cad8d1245bd0" sha256="147a8f54a98a6263d9d07bdccb1e916cd2f1447b41216b3ce3a4d5a0671c83bb" mia="yes"/>
+	</game>
+	<game name="Xeno Crisis (World) (En,Ja,Fr,De,Es,It,Nl,Pt) (Aftermarket) (Unl)" id="2427">
+		<category>Games</category>
+		<description>Xeno Crisis (World) (En,Ja,Fr,De,Es,It,Nl,Pt) (Aftermarket) (Unl)</description>
+		<rom name="Xeno Crisis (World) (En,Ja,Fr,De,Es,It,Nl,Pt) (Aftermarket) (Unl).md" size="4194304" crc="ac5f4cca" md5="50cca5273cdb6d6df36cbd29dbd3ff7f" sha1="0b9b100b0140c76a9ecaf96fd3031a8002aeea60" sha256="5e6409f26f6570dad5dc064a158a771a489368eed0eaca6f53f8221513be11c6" status="verified" serial="BMAP-001-00"/>
+	</game>
+	<game name="Xump 2 - Back to Space (World) (Aftermarket) (Unl)" id="2714">
+		<category>Games</category>
+		<description>Xump 2 - Back to Space (World) (Aftermarket) (Unl)</description>
+		<rom name="Xump 2 - Back to Space (World) (Aftermarket) (Unl).md" size="1441792" crc="227623f4" md5="5a480c7bfaa7f22c2eaf1fd109e6536a" sha1="87bc3a1a2127214acaeb587ffdfe5ac5a8798cb1" sha256="3b45f50ef021dd88ff72d2515b4160458f93eca17cc18bd4fa680a9fd4433844"/>
+	</game>
+	<game name="Xump 2 - Back to Space (World) (Digital) (Aftermarket) (Unl)" id="2715" cloneofid="2714">
+		<category>Games</category>
+		<description>Xump 2 - Back to Space (World) (Digital) (Aftermarket) (Unl)</description>
+		<rom name="Xump 2 - Back to Space (World) (Digital) (Aftermarket) (Unl).md" size="1441792" crc="3bc0b742" md5="e099084aaeee5a7bfe2cec658f1fd022" sha1="c623858c57814887aa0c65c6d3c2426cdcd077ff" sha256="68b79985b3eb3c891280b5c10358fa11245edd91e82a622fa9c1aacd3ac4920a"/>
+	</game>
+	<game name="Xump 2 - Back to Space - Alternative Edition (World) (Aftermarket) (Unl)" id="2716">
+		<category>Games</category>
+		<description>Xump 2 - Back to Space - Alternative Edition (World) (Aftermarket) (Unl)</description>
+		<rom name="Xump 2 - Back to Space - Alternative Edition (World) (Aftermarket) (Unl).md" size="1310720" crc="94c07ddb" md5="02bb7d7ea860220eddfd8f935632f270" sha1="3cf1696f251dc22058e7aa9531195b89cd437ce4" sha256="4da2fabf31536725d076fe8e096ea22a1a9ba0a16367784acf8886debbda2e08"/>
+	</game>
+	<game name="YM2017 (World) (Aftermarket) (Unl)" id="3300" cloneofid="3080">
+		<category>Audio</category>
+		<description>YM2017 (World) (Aftermarket) (Unl)</description>
+		<rom name="YM2017 (World) (Aftermarket) (Unl).md" size="2097152" crc="bd9cc99e" md5="defa7f2750bd4c17928fcca94fbfb13d" sha1="fd994c885eaa87f1d8f309d2beb64f5c8d2b02fd" sha256="ef51a5a1dcb095664f53ce71131ebac8824eac806d10941b9de147bf5abd8b7f" mia="yes" serial="CSET0001-02"/>
+	</game>
+	<game name="YM2612 Instrument Editor (USA, Europe) (Program) (Aftermarket) (Unl)" id="2880">
+		<category>Applications</category>
+		<description>YM2612 Instrument Editor (USA, Europe) (Program) (Aftermarket) (Unl)</description>
+		<rom name="YM2612 Instrument Editor (USA, Europe) (Program) (Aftermarket) (Unl).md" size="1048576" crc="d8949c3e" md5="62845ffa70c8e1e4549596a9581d5726" sha1="67510518f26c3c8296e6a8adc8d6b18b9b1034a9" sha256="06b25592a901c059db5a30dcfe2a9ea9507a90d2b13434536b8aaf83557aefa0" status="verified"/>
+	</game>
+</datafile>

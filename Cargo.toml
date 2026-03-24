@@ -1,0 +1,10 @@
+[package]
+name = "md-rewriter-dumper"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+serialport = "4.9.0"
+encoding_rs = "0.8"
+xml = "1.0"
+crc32fast = "1.5.0"
