@@ -1,3 +1,4 @@
+use std::fmt::{Display, Formatter};
 use std::{collections::HashMap, error::Error};
 use std::fs;
 use std::fs::File;
@@ -12,7 +13,7 @@ trait SerialPortExt {
     fn connect(&mut self) -> Result<(), Box<dyn Error>>;
     fn read_all(&mut self) -> Result<Vec<u8>, Box<dyn Error>>;
     fn expect_string(&mut self, expected: &str) -> Result<(), Box<dyn Error>>;
-    fn dump_header(&mut self) -> Result<RomHeader, Box<dyn Error>>;
+    fn dump_512k(&mut self) -> Result<Vec<u8>, Box<dyn Error>>;
     fn dump_rom(&mut self) -> Result<Vec<u8>, Box<dyn Error>>;
     fn dump_sram(&mut self) -> Result<Vec<u8>, Box<dyn Error>>;
     fn read_length(&mut self, length: usize) -> Result<Vec<u8>, Box<dyn Error>>;
@@ -32,7 +33,7 @@ impl SerialPortExt for dyn SerialPort {
 
     // Even though the header is contained within the first 512 bytes of the ROM, the smallest
     // dump size supported by the firmware is 512KB, so do that.
-    fn dump_header(&mut self) -> Result<RomHeader, Box<dyn Error>> {
+    fn dump_512k(&mut self) -> Result<Vec<u8>, Box<dyn Error>> {
         const BUF_SIZE: usize = 1024;
         const TOTAL_SIZE: usize = 1024 * 512;
         self.write(&[0x0a, 0xaa, 0x55, 0xaa, 0xbb, 0x01])?;
@@ -44,7 +45,7 @@ impl SerialPortExt for dyn SerialPort {
         }
         self.expect_string("DUMPER ROM FINISH!!!\r\nPUSH SAVE GAME BUTTON!!!\r\n")?;
 
-        Ok(RomHeader::from_bytes(&response[0x100..0x200]))
+        Ok(response)
     }
 
     // Always dump the full 4 MB; some ROMs are larger than their header says.
@@ -116,7 +117,7 @@ struct RomHeader {
     device_support: String,
     rom_address_start: u32,
     rom_size: usize,
-    sram: Option<Sram>,
+    sram: Option<SramInfo>,
     regions: String,
 }
 
@@ -133,7 +134,7 @@ impl RomHeader {
             device_support: String::from_utf8_lossy(&header[0x90..0xa0]).into(),
             rom_address_start: u32::from_be_bytes(header[0xa0..0xa4].try_into().unwrap()),
             rom_size: (u32::from_be_bytes(header[0xa4..0xa8].try_into().unwrap()) as usize) + 1,
-            sram: Sram::from_bytes(&header[0xb0..0xbc]),
+            sram: SramInfo::from_bytes(&header[0xb0..0xbc]),
             regions: String::from_utf8_lossy(&header[0xf0..0xf3]).into(),
         }
     }
@@ -145,6 +146,7 @@ impl RomHeader {
         self.serial.is_ascii() &&
         self.device_support.is_ascii() &&
         self.rom_address_start == 0 &&
+        self.rom_size > 512 &&
         self.rom_size <= 4*1024*1024
     }
 
@@ -157,23 +159,28 @@ impl RomHeader {
         println!("Checksum: {:04X}", self.checksum);
         println!("Device support: {}", &self.device_support);
         println!("ROM size: {} bytes", self.rom_size);
-        println!("SRAM: {:?}", self.sram);
+        if let Some(sram_info) = &self.sram {
+            println!("SRAM: {}", sram_info);
+        } else {
+            println!("SRAM: none");
+        }
         println!("Supported regions: {}", &self.regions);
         println!();
     }
 }
 
 #[derive(Debug)]
-struct Sram {
+struct SramInfo {
+    ram_type: u8,
     start_address: u32,
     end_address: u32,
 }
 
-impl Sram {
-    fn from_bytes(data: &[u8]) -> Option<Sram> {
+impl SramInfo {
+    fn from_bytes(data: &[u8]) -> Option<SramInfo> {
         if &data[0..2] == &[b'R', b'A'] {
-            println!("SRAM type: {:02X}", data[2]);
-            Some(Sram {
+            Some(SramInfo {
+                ram_type: data[2],
                 start_address: u32::from_be_bytes(data[4..8].try_into().unwrap()),
                 end_address: u32::from_be_bytes(data[8..12].try_into().unwrap()),
             })
@@ -183,11 +190,29 @@ impl Sram {
     }
 }
 
-fn checksum(rom: &[u8]) -> u16 {
+impl Display for SramInfo {
+    fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), std::fmt::Error> {
+        let description;
+        if self.ram_type & 0x10 == 0 {
+            description = "16-bit";
+        } else if self.ram_type & 0x08 == 0 {
+            description = "8-bit with even addresses";
+        } else {
+            description = "8-bit with odd addresses";
+        }
+        write!(f, "type={:02X} ({}), start={:x}, end={:x}", self.ram_type, description, self.start_address, self.end_address)?;
+        Ok(())
+    }
+}
+
+fn checksum(rom: &[u8], size: usize) -> Option<u16> {
+    if size < 0x200 || size > rom.len() {
+        return None;
+    }
     // If the rom size is odd for some reason, leave out the last byte to prevent this function from panicking.
     // The checksum is unlikely to match in such a ROM anyway.
-    let end_point = rom.len() & !1;
-    rom[0x200..end_point].chunks(2).map(|chunk| u16::from_be_bytes([chunk[0], chunk[1]]) as usize).sum::<usize>() as u16
+    let end_point = size & !1;
+    Some(rom[0x200..end_point].chunks(2).map(|chunk| u16::from_be_bytes([chunk[0], chunk[1]]) as usize).sum::<usize>() as u16)
 }
 
 // TODO move this into romdb.rs?
@@ -222,7 +247,9 @@ fn find_no_intro_match(rom_data: &[u8], mut rom_size: usize, romdb: &[romdb::Rom
                     // This won't happen when nothing is locked on, since the size in the S&K ROM
                     // header (2MB) matches its size in No-Intro.
                     if dbmatch.name != "Sonic & Knuckles (World)" {
-                        println!("The ROM size in the No-Intro database ({}) differs from the size in the ROM header ({}). This is normal and not a problem.", dbmatch.size, rom_size);
+                        println!("The ROM size in the No-Intro database ({}) differs from the \
+                                 size in the ROM header ({}). This is normal and not a problem.",
+                                 dbmatch.size, rom_size);
                     }
                     println!("Found No-Intro match: {}", dbmatch.name);
                     name = dbmatch.name.clone();
@@ -232,24 +259,17 @@ fn find_no_intro_match(rom_data: &[u8], mut rom_size: usize, romdb: &[romdb::Rom
         }
 
         if !no_intro_match_found {
-            let serial_matches: Vec<_> = romdb.iter().filter(|e| {
+            let mut serial_matches: Vec<_> = romdb.iter().filter(|e| {
                 if let Some(db_serial) = e.serial.as_ref() {
                     header.serial.replace(" ", "").replace("-", "").contains(&db_serial.replace(" ", "").replace("-", ""))
                 } else { false }
             }).collect();
+            serial_matches.sort();
 
-            if header.serial == "GM 00001009-00" {
-                if header.domestic_title.trim() == "" {
-                    // Tanglewood has a fake ROM header at the 2 MB mark to fool Sonic & Knuckles
-                    // into thinking Sonic 1 is locked on.
-                    name = "Tanglewood (unknown variant)".to_string();
-                } else {
-                    // There's a random European prototype dumped by Hidden Palace that has the Sonic 1
-                    // serial number in its header. No one is dumping that. This is Sonic. If you have
-                    // rare prototype cartridges, please use a dumper that you didn't get for $20 from
-                    // AliExpress.
-                    name = "Sonic The Hedgehog (unknown variant)".to_string();
-                }
+            if header.serial == "GM 00001009-00" && header.domestic_title.trim() == "" {
+                // Tanglewood has a fake ROM header at the 2 MB mark to fool Sonic & Knuckles
+                // into thinking Sonic 1 is locked on.
+                name = "Tanglewood (unknown variant)".to_string();
             } else if !serial_matches.is_empty() && !header.serial.contains("00000000-00") {
                 println!("No exact match found in the No-Intro database, but shares a serial number with these entries:");
                 for dbmatch in &serial_matches {
@@ -258,7 +278,7 @@ fn find_no_intro_match(rom_data: &[u8], mut rom_size: usize, romdb: &[romdb::Rom
                 name = format!("{} (unknown variant)", serial_matches[0].name.split_once(" (").map_or(serial_matches[0].name.as_str(), |m| m.0));
             } else {
                 println!("No match found in the No-Intro database.");
-                // use default name
+                // use default name ("Unknown Game")
             }
         }
     }
@@ -266,20 +286,20 @@ fn find_no_intro_match(rom_data: &[u8], mut rom_size: usize, romdb: &[romdb::Rom
     let header_checksum = u16::from_be_bytes([rom_data[0x18e], rom_data[0x18f]]);
     // At least one game (the aforementioned Zero Wing) has a header checksum calculated with the
     // actual ROM size, not the ROM size in the header.
-    let calculated_checksum1 = if header.rom_size <= rom_data.len() { checksum(&rom_data[0..header.rom_size]) } else { 0 };
-    let calculated_checksum2 = if rom_size <= rom_data.len() { checksum(&rom_data[0..rom_size]) } else { 0 };
-    if header_checksum == calculated_checksum1 || header_checksum == calculated_checksum2 {
+    let calculated_checksum1 = checksum(&rom_data, header.rom_size);
+    let calculated_checksum2 = checksum(&rom_data, rom_size);
+    if calculated_checksum1 == Some(header_checksum) || calculated_checksum2 == Some(header_checksum) {
         println!("Calculated checksum matches ROM header!");
         if !no_intro_match_found {
             println!();
             println!("Since the checksum is correct, this might be a good dump of a cartridge that's not in the No-Intro database. Try running \"{name}\" in your favorite emulator and see if it works.");
         }
-    } else if no_intro_match_found {
-        println!("Calculated checksum {calculated_checksum1:04X} does not match ROM header.");
+    } else if let Some(calculated_checksum) = calculated_checksum1 && no_intro_match_found {
+        println!("Calculated checksum {calculated_checksum:04X} does not match ROM header.");
         println!();
         println!("Since this matches an entry in the No-Intro database, it is still a good dump. The mismatched checksum can be safely ignored.");
-    } else {
-        println!("Warning: calculated checksum {calculated_checksum1:04X} does not match ROM header!");
+    } else if let Some(calculated_checksum) = calculated_checksum1 {
+        println!("Warning: calculated checksum {calculated_checksum:04X} does not match ROM header!");
         println!();
         println!("Since the checksum is mismatched and no match was found in No-Intro, this might be a bad dump. It is recommended to disconnect the dumper, remove and reinsert the cartridge, redo the dump, and see if the ROM dumped is the same.");
     }
@@ -301,7 +321,23 @@ fn dump(force: bool) -> Result<(), Box<dyn Error>> {
     let mut conn = serialport::new(device_path, 1000000).open()?;
     conn.connect()?;
 
-    let mut header = conn.dump_header()?;
+    // Sonic 3 maps its entire ROM into the bottom 2 MB of address space, rather than the top, unless
+    // we read SRAM first. Strictly Limited Games' release of Panorama Cotton, which doesn't even
+    // have SRAM, won't map the ROM at all unless we try to read from SRAM. Conversely, 16-Bit Rhythm
+    // Land from Columbus Circle won't map the ROM at all if we *do* try to read SRAM at any point.
+    // So the only universally compatible approach is this:
+    //     1) Read the first 512K bytes of the ROM.
+    //     2) If every byte of that 512K dump is 0xFF, read SRAM, then reread the first 512K bytes
+    //        of the ROM.
+    let mut first_512k = conn.dump_512k()?;
+    if first_512k == [0xff; 512*1024] {
+        println!("The ROM header isn't showing up. Some games can have their ROMs \"unlocked\" by \
+                  reading from SRAM. Trying that now.");
+        let _ = conn.dump_sram()?;
+        first_512k = conn.dump_512k()?;
+    }
+
+    let header = RomHeader::from_bytes(&first_512k[0x100..0x200]);
     let mut rom_size = header.rom_size;
 
     println!("\nROM header:");
@@ -316,49 +352,25 @@ fn dump(force: bool) -> Result<(), Box<dyn Error>> {
             rom_size = 4 * 1024 * 1024;
         } else {
             println!("Use --force to dump the ROM anyway.");
-            println!("The --force option might be necessary for dumping Sonic 3.");
             return Err("Invalid ROM header.".to_string().into());
         }
     }
 
     println!("Dumping ROM...");
-    let mut rom_data = conn.dump_rom()?;
+    let rom_data = conn.dump_rom()?;
     println!("Finished dumping ROM.");
 
-    // For some reason, my Sonic 3 cartridge shows up in the bottom 2MB of the dump instead of the
-    // top 2MB. This means its header is detected as invalid and "--force" must be used to dump it.
-    // So, if "--force" has been used, check whether this has happened.
-    if !header.valid() {
-        let second_header = RomHeader::from_bytes(&rom_data[0x200100..0x200200]);
-        if second_header.valid() {
-            println!("Found a valid header 2 MB into the ROM. Swapping the top and bottom halves.");
-
-            header = second_header;
-            let mut swapped_rom_data = Vec::new();
-            swapped_rom_data.extend_from_slice(&rom_data[0x200000..]);
-            swapped_rom_data.extend_from_slice(&rom_data[..0x200000]);
-            rom_data = swapped_rom_data;
-            rom_size = header.rom_size;
-
-            println!("\nROM header:");
-            header.print();
-        }
-    }
-
-    if let Some(sram) = &header.sram {
+    // TODO try this with something that uses a different SRAM type than F8
+    let sram_data = if let Some(_) = &header.sram {
         println!("Dumping SRAM...");
         let sram_data = conn.dump_sram()?;
         println!("Finished dumping SRAM.");
+        Some(sram_data)
+    } else {
+        None
+    };
 
-        let sram_size = (sram.end_address - sram.start_address + 2) as usize;
-        println!("SRAM size: {} KiB", sram_size / 1024 / 2);
-
-        // TODO move this
-        fs::write("save.sav", &sram_data[..sram_size])?;
-        println!("\nWrote SRAM to \"save.sav\"");
-    }
-
-    process_dump(rom_data, header, rom_size)
+    process_dump(rom_data, header, rom_size, sram_data)
 }
 
 // This is only useful for debugging.
@@ -367,10 +379,20 @@ fn process_from_file(path: &str) -> Result<(), Box<dyn Error>> {
     rom_data.resize(4 * 1024 * 1024, 0xff);
     let header = RomHeader::from_bytes(&rom_data[0x100..0x200]);
     let rom_size = if header.valid() { header.rom_size } else { 4 * 1024 * 1024 };
-    process_dump(rom_data, header, rom_size)
+
+    println!("\nROM header:");
+    header.print();
+
+    let sram_data = if let Some(_) = &header.sram {
+        Some(vec![0; 32*1024])
+    } else {
+        None
+    };
+
+    process_dump(rom_data, header, rom_size, sram_data)
 }
 
-fn process_dump(rom_data: Vec<u8>, header: RomHeader, mut rom_size: usize) -> Result<(), Box<dyn Error>> {
+fn process_dump(rom_data: Vec<u8>, header: RomHeader, mut rom_size: usize, sram: Option<Vec<u8>>) -> Result<(), Box<dyn Error>> {
     let romdb = romdb::read_no_intro()?;
 
     let locked_on;
@@ -420,9 +442,26 @@ fn process_dump(rom_data: Vec<u8>, header: RomHeader, mut rom_size: usize) -> Re
     }
 
     let filename = format!("{name}.gen");
-    let mut file = File::create(&filename)?;
-    file.write_all(&rom_data[0..rom_size])?;
+    fs::write(&filename, &rom_data[0..rom_size])?;
     println!("\nWrote ROM to \"{}\"", &filename);
+
+    // TODO handle errors: end_address < start_address or sram_size > 32K
+    if let Some(sram) = sram && let Some(sram_info) = header.sram {
+        // It's oddly tricky to deduce the SRAM size from the header. I referenced the
+        // read_ram_header() function in BlastEm to figure this out.
+        let start_address = sram_info.start_address & 0xfffffe;
+        let end_address = sram_info.end_address | 1;
+        let mut sram_size = (end_address - start_address + 1) as usize;
+        if sram_info.ram_type & 0x10 != 0 { // this SRAM has 8-bit accesses
+            sram_size /= 2;
+        }
+        sram_size &= !1; // Psy-O-Blade shows up as 32769 bytes without this
+        println!("\nSRAM size: {} bytes", sram_size);
+
+        let filename = format!("{name}.srm");
+        fs::write(&filename, &sram[..sram_size])?;
+        println!("Wrote SRAM to \"{}\"", &filename);
+    }
 
     Ok(())
 }
@@ -444,5 +483,38 @@ fn main() {
     if let Err(err) = dump(force) {
         eprintln!("Error: {:?}", err);
         std::process::exit(1);
+    }
+
+    // TODO remove this temporary stuff
+    let romdb = romdb::read_no_intro().unwrap();
+    let mut serials: HashMap<String, Vec<_>> = HashMap::new();
+    for rom in &romdb {
+        if rom.serial == None { continue; }
+        let serial = rom.serial.as_ref().unwrap();
+        if let Some(vec) = serials.get_mut(serial) {
+            vec.push(rom);
+        } else {
+            serials.insert(serial.clone(), vec![rom]);
+        }
+    }
+    for (serial, vec) in serials.iter() {
+        if vec.len() > 1 {
+            let mut titles = std::collections::HashSet::new();
+            for rom in vec {
+                let name = &rom.name;
+                if !name.contains("(Pirate)") && !name.contains("(Beta") && !name.contains("(Proto") {
+                    titles.insert(name.split_once(" (").map_or(name.as_str(), |m| m.0));
+                }
+            }
+            if titles.len() > 1 {
+                println!("{serial}:");
+                let mut sorted = vec.clone();
+                sorted.sort();
+                for rom in sorted {
+                    println!("\t{}", &rom.name);
+                }
+                println!();
+            }
+        }
     }
 }
