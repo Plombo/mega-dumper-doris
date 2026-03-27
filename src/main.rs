@@ -483,35 +483,4 @@ fn main() {
         eprintln!("Error: {:?}", err);
         std::process::exit(1);
     }
-
-    // TODO remove this temporary stuff
-    let romdb = romdb::read_no_intro().unwrap();
-    let mut serials: HashMap<String, Vec<_>> = HashMap::new();
-    for rom in &romdb {
-        if rom.serial == None { continue; }
-        let serial = rom.serial.as_ref().unwrap();
-        if let Some(vec) = serials.get_mut(serial) {
-            vec.push(rom);
-        } else {
-            serials.insert(serial.clone(), vec![rom]);
-        }
-    }
-    for (serial, vec) in serials.iter() {
-        if vec.len() > 1 {
-            let mut titles = std::collections::HashSet::new();
-            for rom in vec {
-                titles.insert(rom.name.split_once(" (").map_or(rom.name.as_str(), |m| m.0));
-            }
-            if titles.len() > 1 {
-                let mut sorted = vec.clone();
-                sorted.sort();
-                let title = sorted[0].name.split_once(" (").map_or(sorted[0].name.as_str(), |m| m.0);
-                println!("{serial}: {title}");
-                for rom in sorted {
-                    println!("\t{}", &rom.name);
-                }
-                println!();
-            }
-        }
-    }
 }
