@@ -1,3 +1,15 @@
+// Copyright (C) 2026 Bryan Cain
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3, or (at your option)
+// any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
 use std::fmt::{Display, Formatter};
 use std::collections::HashMap;
 use std::error::Error;
@@ -270,7 +282,8 @@ fn find_no_intro_match(rom_data: &[u8], mut rom_size: usize, romdb: &[romdb::Rom
                 // into thinking Sonic 1 is locked on.
                 name = "Tanglewood (unknown variant)".to_string();
             } else if !serial_matches.is_empty() && !header.serial.contains("00000000-00") {
-                println!("No exact match found in the No-Intro database, but shares a serial number with these entries:");
+                println!("No exact match found in the No-Intro database, but shares a serial \
+                          number with these entries:");
                 for dbmatch in &serial_matches {
                     println!("\t{}", dbmatch.name);
                 }
@@ -291,18 +304,24 @@ fn find_no_intro_match(rom_data: &[u8], mut rom_size: usize, romdb: &[romdb::Rom
         println!("Calculated checksum matches ROM header!");
         if !no_intro_match_found {
             println!();
-            println!("Since the checksum is correct, this might be a good dump of a cartridge that's not in the No-Intro database. Try running \"{name}\" in your favorite emulator and see if it works.");
+            println!("Since the checksum is correct, this might be a good dump of a cartridge \
+                     that's not in the No-Intro database. Try running \"{name}.gen\" in your favorite \
+                     emulator and see if it works.");
         }
     } else if let Some(calculated_checksum) = calculated_checksum1 && no_intro_match_found {
         println!("Calculated checksum {calculated_checksum:04X} does not match ROM header.");
         println!();
-        println!("Since this matches an entry in the No-Intro database, it is still a good dump. The mismatched checksum can be safely ignored.");
+        println!("Since this matches an entry in the No-Intro database, it is still a good dump. \
+                 The mismatched checksum can be safely ignored.");
     } else if let Some(calculated_checksum) = calculated_checksum1 {
         println!("Warning: calculated checksum {calculated_checksum:04X} does not match ROM header!");
         println!();
         println!("Since the checksum is mismatched and no match was found in No-Intro, this might \
                   be a bad dump. It is recommended to disconnect the dumper, remove and reinsert \
-                  the cartridge, redo the dump, and see if the ROM dumped is the same.");
+                  the cartridge, redo the dump, and see if the ROM dumped is the same. If you get \
+                  an identical dump across multiple attempts, and \"{name}.gen\" works in your \
+                  favorite emulator, it's probably a good dump of a cartridge that's not documented \
+                  in the No-Intro database.");
     }
 
     (name, rom_size)
@@ -359,7 +378,7 @@ fn dump(force: bool) -> Result<(), Box<dyn Error>> {
 
     println!("Dumping ROM...");
     let rom_data = conn.dump_rom()?;
-    println!("Finished dumping ROM.");
+    println!("Finished dumping ROM.\n");
 
     // This has only been tested with SRAM type F8. Fortunately, pretty much everything with SRAM
     // uses type F8.
@@ -484,7 +503,13 @@ fn process_dump(rom_data: Vec<u8>, header: RomHeader, mut rom_size: usize, sram:
     Ok(())
 }
 
+fn exit(code: i32) {
+    std::process::exit(code);
+}
+
 fn main() {
+    println!("Mega Dumper Doris v1.0 by Plombo\n");
+
     // very haphazard argument processing because who cares
     let args: Vec<_> = std::env::args().collect();
     let mut force = false;
@@ -493,13 +518,15 @@ fn main() {
     } else if args.len() > 1 {
         if let Err(err) = process_from_file(&args[1]) {
             eprintln!("Error: {:?}", err);
-            std::process::exit(1);
+            exit(1);
         }
-        std::process::exit(0);
+        exit(0);
     }
 
     if let Err(err) = dump(force) {
         eprintln!("Error: {:?}", err);
-        std::process::exit(1);
+        exit(1);
     }
+
+    exit(0);
 }
