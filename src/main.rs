@@ -10,7 +10,7 @@
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 
-use std::fmt::{Display, Formatter};
+use std::fmt::{Display, Formatter, format};
 use std::collections::HashMap;
 use std::error::Error;
 use std::fs;
@@ -20,9 +20,26 @@ use serialport::{SerialPort, SerialPortType, UsbPortInfo};
 
 mod romdb;
 
+fn exit(code: i32) {
+    std::process::exit(code);
+}
+
+// Prints to the terminal with proper word wrapping, so that individual words aren't split across
+// two lines. This makes the output much easier to read!
+macro_rules! wrap_println {
+    ($($arg:tt)*) => {{
+        let message = format(format_args!($($arg)*));
+        let wrapped = if let Some(term_size) = termsize::get() {
+            textwrap::fill(&message, term_size.cols as usize)
+        } else {
+            message
+        };
+        println!("{wrapped}");
+    }};
+}
+
 trait SerialPortExt {
     fn connect(&mut self) -> Result<(), Box<dyn Error>>;
-    fn read_all(&mut self) -> Result<Vec<u8>, Box<dyn Error>>;
     fn expect_string(&mut self, expected: &str) -> Result<(), Box<dyn Error>>;
     fn dump_512k(&mut self) -> Result<Vec<u8>, Box<dyn Error>>;
     fn dump_rom(&mut self) -> Result<Vec<u8>, Box<dyn Error>>;
@@ -32,10 +49,6 @@ trait SerialPortExt {
 
 impl SerialPortExt for dyn SerialPort {
     fn connect(&mut self) -> Result<(), Box<dyn Error>> {
-        while self.bytes_to_read()? > 0 {
-            println!("{:?}", self.bytes_to_read());
-            println!("{:?}", String::from_utf8_lossy(&self.read_all()?));
-        }
         self.write(&[0x0c, 0xaa, 0x55, 0xaa, 0xbb])?;
         self.expect_string("FlashMaster MD Dumper is connected\r\n")?;
         println!("Connected to dumper.");
@@ -87,12 +100,6 @@ impl SerialPortExt for dyn SerialPort {
         }
         self.expect_string("DUMPER RAM FINISH!!!\r\n")?;
 
-        Ok(response)
-    }
-
-    fn read_all(&mut self) -> Result<Vec<u8>, Box<dyn Error>> {
-        let mut response = vec![0; self.bytes_to_read()?.try_into().unwrap()];
-        self.read_exact(&mut response)?;
         Ok(response)
     }
 
@@ -235,7 +242,7 @@ fn find_no_intro_match(rom_data: &[u8], mut rom_size: usize, romdb: &[romdb::Rom
     let crc32 = crc32fast::hash(&rom_data[0..rom_size]);
     println!("CRC32: {:08x}", crc32);
     if let Some(dbmatch) = romdb.iter().find(|e| e.crc32 == crc32) {
-        println!("Found No-Intro match: {}", dbmatch.name);
+        wrap_println!("Found No-Intro match: {}", dbmatch.name);
         name = dbmatch.name.clone();
         no_intro_match_found = true;
     } else {
@@ -258,9 +265,9 @@ fn find_no_intro_match(rom_data: &[u8], mut rom_size: usize, romdb: &[romdb::Rom
                     // This won't happen when nothing is locked on, since the size in the S&K ROM
                     // header (2MB) matches its size in No-Intro.
                     if dbmatch.name != "Sonic & Knuckles (World)" {
-                        println!("The ROM size in the No-Intro database ({}) differs from the \
-                                 size in the ROM header ({}). This is normal and not a problem.",
-                                 dbmatch.size, rom_size);
+                        wrap_println!("The ROM size in the No-Intro database ({}) differs from the \
+                                      size in the ROM header ({}). This is normal and not a problem.",
+                                      dbmatch.size, rom_size);
                     }
                     println!("Found No-Intro match: {}", dbmatch.name);
                     name = dbmatch.name.clone();
@@ -282,14 +289,14 @@ fn find_no_intro_match(rom_data: &[u8], mut rom_size: usize, romdb: &[romdb::Rom
                 // into thinking Sonic 1 is locked on.
                 name = "Tanglewood (unknown variant)".to_string();
             } else if !serial_matches.is_empty() && !header.serial.contains("00000000-00") {
-                println!("No exact match found in the No-Intro database, but shares a serial \
-                          number with these entries:");
+                wrap_println!("No exact match found in the No-Intro database, but shares a serial \
+                              number with these entries:");
                 for dbmatch in &serial_matches {
                     println!("\t{}", dbmatch.name);
                 }
                 name = format!("{} (unknown variant)", serial_matches[0].name.split_once(" (").map_or(serial_matches[0].name.as_str(), |m| m.0));
             } else {
-                println!("No match found in the No-Intro database.");
+                wrap_println!("No match found in the No-Intro database.");
                 // use default name ("Unknown Game")
             }
         }
@@ -305,18 +312,18 @@ fn find_no_intro_match(rom_data: &[u8], mut rom_size: usize, romdb: &[romdb::Rom
         if !no_intro_match_found {
             println!();
             println!("Since the checksum is correct, this might be a good dump of a cartridge \
-                     that's not in the No-Intro database. Try running \"{name}.gen\" in your favorite \
-                     emulator and see if it works.");
+                     that's not in the No-Intro database. Try running \"{name}.gen\" in your \
+                     favorite emulator and see if it works.");
         }
     } else if let Some(calculated_checksum) = calculated_checksum1 && no_intro_match_found {
         println!("Calculated checksum {calculated_checksum:04X} does not match ROM header.");
         println!();
-        println!("Since this matches an entry in the No-Intro database, it is still a good dump. \
-                 The mismatched checksum can be safely ignored.");
+        wrap_println!("Since this matches an entry in the No-Intro database, it is still a good \
+                      dump. The mismatched checksum can be safely ignored.");
     } else if let Some(calculated_checksum) = calculated_checksum1 {
-        println!("Warning: calculated checksum {calculated_checksum:04X} does not match ROM header!");
+        wrap_println!("Warning: calculated checksum {calculated_checksum:04X} does not match ROM header!");
         println!();
-        println!("Since the checksum is mismatched and no match was found in No-Intro, this might \
+        wrap_println!("Since the checksum is mismatched and no match was found in No-Intro, this might \
                   be a bad dump. It is recommended to disconnect the dumper, remove and reinsert \
                   the cartridge, redo the dump, and see if the ROM dumped is the same. If you get \
                   an identical dump across multiple attempts, and \"{name}.gen\" works in your \
@@ -336,7 +343,7 @@ fn dump(force: bool) -> Result<(), Box<dyn Error>> {
     }
 
     let device_path = device_path.ok_or("Dumper device not found".to_string())?;
-    println!("Opening device at {}", device_path);
+    wrap_println!("Opening device at {}", device_path);
 
     let mut conn = serialport::new(device_path, 1000000).open()?;
     conn.connect()?;
@@ -351,8 +358,8 @@ fn dump(force: bool) -> Result<(), Box<dyn Error>> {
     //        of the ROM.
     let mut first_512k = conn.dump_512k()?;
     if first_512k == [0xff; 512*1024] {
-        println!("The ROM header isn't showing up. Some games can have their ROMs \"unlocked\" by \
-                  reading from SRAM. Trying that now.");
+        wrap_println!("The ROM header isn't showing up. Some games can have their ROMs \"unlocked\" by \
+                      reading from SRAM. Trying that now.");
         let _ = conn.dump_sram()?;
         first_512k = conn.dump_512k()?;
     }
@@ -360,18 +367,18 @@ fn dump(force: bool) -> Result<(), Box<dyn Error>> {
     let header = RomHeader::from_bytes(&first_512k[0x100..0x200]);
     let mut rom_size = header.rom_size;
 
-    println!("\nROM header:");
+    wrap_println!("\nROM header:");
     header.print();
 
     if header.valid() {
-        println!("Header seems to be valid.");
+        wrap_println!("Header seems to be valid.");
     } else {
-        println!("Header seems to be invalid.");
+        wrap_println!("Header seems to be invalid.");
         if force {
-            println!("Dumping the ROM anyway since --force was specified.");
+            wrap_println!("Dumping the ROM anyway since --force was specified.");
             rom_size = 4 * 1024 * 1024;
         } else {
-            println!("Use --force to dump the ROM anyway.");
+            wrap_println!("Use --force to dump the ROM anyway.");
             return Err("Invalid ROM header.".to_string().into());
         }
     }
@@ -384,12 +391,12 @@ fn dump(force: bool) -> Result<(), Box<dyn Error>> {
     // uses type F8.
     let sram_data = if let Some(info) = &header.sram {
         if info.ram_type == 0xE8 {
-            println!("This cartridge uses serial EEPROM for saving. Not going to try to read its save.");
+            wrap_println!("This cartridge uses serial EEPROM for saving. Not going to try to read its save.");
             None
         } else {
-            println!("Dumping SRAM...");
+            wrap_println!("Dumping SRAM...");
             let sram_data = conn.dump_sram()?;
-            println!("Finished dumping SRAM.");
+            wrap_println!("Finished dumping SRAM.");
             Some(sram_data)
         }
     } else {
@@ -406,7 +413,7 @@ fn process_from_file(path: &str) -> Result<(), Box<dyn Error>> {
     let header = RomHeader::from_bytes(&rom_data[0x100..0x200]);
     let rom_size = if header.valid() { header.rom_size } else { 4 * 1024 * 1024 };
 
-    println!("\nROM header:");
+    wrap_println!("\nROM header:");
     header.print();
 
     let sram_data = if let Some(_) = &header.sram {
@@ -423,29 +430,29 @@ fn process_dump(rom_data: Vec<u8>, header: RomHeader, mut rom_size: usize, sram:
 
     let locked_on;
     if header.overseas_title.trim() == "SONIC & KNUCKLES" {
-        println!("\nSonic & Knuckles detected. Seeing if anything is locked on...");
+        wrap_println!("\nSonic & Knuckles detected. Seeing if anything is locked on...");
         let second_header = RomHeader::from_bytes(&rom_data[0x200100..0x200200]);
         if second_header.valid() {
             locked_on = true;
             rom_size += second_header.rom_size;
-            println!("\nLocked-on cartridge header:");
+            wrap_println!("\nLocked-on cartridge header:");
             second_header.print();
             match second_header.domestic_title.trim() {
                 "SONIC THE             HEDGEHOG 3" => {
-                    println!("Sonic 3 is locked on.");
+                    wrap_println!("Sonic 3 is locked on.");
                 }
                 "SONIC THE             HEDGEHOG 2" => {
-                    println!("Sonic 2 is locked on. This isn't supported and won't work properly.");
+                    wrap_println!("Sonic 2 is locked on. This isn't supported and won't work properly.");
                 }
                 _ => {}
             }
         } else if rom_data[0x200000..] == [0xff; 0x200000] {
             locked_on = false;
-            println!("Nothing is locked on.");
+            wrap_println!("Nothing is locked on.");
         } else {
             locked_on = true;
-            println!("An unsupported cartridge (>2MB) is locked on, or the lock-on connection is bad.");
-            println!("\nLocked-on cartridge header:");
+            wrap_println!("An unsupported cartridge (>2MB) is locked on, or the lock-on connection is bad.");
+            wrap_println!("\nLocked-on cartridge header:");
             second_header.print();
         }
         println!();
@@ -455,7 +462,7 @@ fn process_dump(rom_data: Vec<u8>, header: RomHeader, mut rom_size: usize, sram:
 
     let (mut name, mut rom_size) = find_no_intro_match(&rom_data, rom_size, &romdb);
     if name == "Sonic & Knuckles (World)" && locked_on {
-        println!("\nTrying to identify the locked-on cartridge...");
+        wrap_println!("\nTrying to identify the locked-on cartridge...");
         let second_rom = &rom_data[0x200000..];
         let second_header = RomHeader::from_bytes(&second_rom[0x100..0x200]);
         let second_size = if second_header.valid() { second_header.rom_size } else { 2*1024*1024 };
@@ -469,7 +476,7 @@ fn process_dump(rom_data: Vec<u8>, header: RomHeader, mut rom_size: usize, sram:
 
     let filename = format!("{name}.gen");
     fs::write(&filename, &rom_data[0..rom_size])?;
-    println!("\nWrote ROM to \"{}\"", &filename);
+    wrap_println!("\nWrote ROM to \"{}\"", &filename);
 
     if let Some(sram) = sram && let Some(sram_info) = header.sram {
         // It's oddly tricky to deduce the SRAM size from the header. I referenced the
@@ -478,8 +485,8 @@ fn process_dump(rom_data: Vec<u8>, header: RomHeader, mut rom_size: usize, sram:
         let end_address = sram_info.end_address | 1;
 
         if end_address < start_address {
-            println!("SRAM end address {:x} is before the start address {:x}. Not saving the \
-                     SRAM to a file.", end_address, start_address);
+            wrap_println!("SRAM end address {:x} is before the start address {:x}. Not saving the \
+                          SRAM to a file.", end_address, start_address);
         } else {
             let mut sram_size = (end_address - start_address + 1) as usize;
             if sram_info.ram_type & 0x10 != 0 { // this SRAM has 8-bit accesses
@@ -489,8 +496,8 @@ fn process_dump(rom_data: Vec<u8>, header: RomHeader, mut rom_size: usize, sram:
             println!("\nSRAM size: {} bytes", sram_size);
 
             if sram_size > 32*1024 {
-                println!("Warning: The ROM claims an SRAM size of {sram_size} bytes, which is \
-                         greater than 32 KB. Only saving the first 32 KB.");
+                wrap_println!("Warning: The ROM claims an SRAM size of {sram_size} bytes, which \
+                               is greater than 32 KB. Only saving the first 32 KB.");
                 sram_size = 32*1024;
             }
 
@@ -501,10 +508,6 @@ fn process_dump(rom_data: Vec<u8>, header: RomHeader, mut rom_size: usize, sram:
     }
 
     Ok(())
-}
-
-fn exit(code: i32) {
-    std::process::exit(code);
 }
 
 fn main() {
