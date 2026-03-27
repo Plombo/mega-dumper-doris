@@ -300,7 +300,9 @@ fn find_no_intro_match(rom_data: &[u8], mut rom_size: usize, romdb: &[romdb::Rom
     } else if let Some(calculated_checksum) = calculated_checksum1 {
         println!("Warning: calculated checksum {calculated_checksum:04X} does not match ROM header!");
         println!();
-        println!("Since the checksum is mismatched and no match was found in No-Intro, this might be a bad dump. It is recommended to disconnect the dumper, remove and reinsert the cartridge, redo the dump, and see if the ROM dumped is the same.");
+        println!("Since the checksum is mismatched and no match was found in No-Intro, this might \
+                  be a bad dump. It is recommended to disconnect the dumper, remove and reinsert \
+                  the cartridge, redo the dump, and see if the ROM dumped is the same.");
     }
 
     (name, rom_size)
@@ -359,12 +361,18 @@ fn dump(force: bool) -> Result<(), Box<dyn Error>> {
     let rom_data = conn.dump_rom()?;
     println!("Finished dumping ROM.");
 
-    // TODO try this with something that uses a different SRAM type than F8
-    let sram_data = if let Some(_) = &header.sram {
-        println!("Dumping SRAM...");
-        let sram_data = conn.dump_sram()?;
-        println!("Finished dumping SRAM.");
-        Some(sram_data)
+    // This has only been tested with SRAM type F8. Fortunately, pretty much everything with SRAM
+    // uses type F8.
+    let sram_data = if let Some(info) = &header.sram {
+        if info.ram_type == 0xE8 {
+            println!("This cartridge uses serial EEPROM for saving. Not going to try to read its save.");
+            None
+        } else {
+            println!("Dumping SRAM...");
+            let sram_data = conn.dump_sram()?;
+            println!("Finished dumping SRAM.");
+            Some(sram_data)
+        }
     } else {
         None
     };
@@ -444,22 +452,33 @@ fn process_dump(rom_data: Vec<u8>, header: RomHeader, mut rom_size: usize, sram:
     fs::write(&filename, &rom_data[0..rom_size])?;
     println!("\nWrote ROM to \"{}\"", &filename);
 
-    // TODO handle errors: end_address < start_address or sram_size > 32K
     if let Some(sram) = sram && let Some(sram_info) = header.sram {
         // It's oddly tricky to deduce the SRAM size from the header. I referenced the
         // read_ram_header() function in BlastEm to figure this out.
         let start_address = sram_info.start_address & 0xfffffe;
         let end_address = sram_info.end_address | 1;
-        let mut sram_size = (end_address - start_address + 1) as usize;
-        if sram_info.ram_type & 0x10 != 0 { // this SRAM has 8-bit accesses
-            sram_size /= 2;
-        }
-        sram_size &= !1; // Psy-O-Blade shows up as 32769 bytes without this
-        println!("\nSRAM size: {} bytes", sram_size);
 
-        let filename = format!("{name}.srm");
-        fs::write(&filename, &sram[..sram_size])?;
-        println!("Wrote SRAM to \"{}\"", &filename);
+        if end_address < start_address {
+            println!("SRAM end address {:x} is before the start address {:x}. Not saving the \
+                     SRAM to a file.", end_address, start_address);
+        } else {
+            let mut sram_size = (end_address - start_address + 1) as usize;
+            if sram_info.ram_type & 0x10 != 0 { // this SRAM has 8-bit accesses
+                sram_size /= 2;
+            }
+            sram_size &= !1; // Psy-O-Blade shows up as 32769 bytes without this
+            println!("\nSRAM size: {} bytes", sram_size);
+
+            if sram_size > 32*1024 {
+                println!("Warning: The ROM claims an SRAM size of {sram_size} bytes, which is \
+                         greater than 32 KB. Only saving the first 32 KB.");
+                sram_size = 32*1024;
+            }
+
+            let filename = format!("{name}.srm");
+            fs::write(&filename, &sram[..sram_size])?;
+            println!("Wrote SRAM to \"{}\"", &filename);
+        }
     }
 
     Ok(())
