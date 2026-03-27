@@ -117,19 +117,19 @@ pub fn read_no_intro() -> std::io::Result<Vec<Rom>> {
     roms.push(Rom {
         name: "Tanglewood (World) (Aftermarket) (Unl)".to_string(),
         size: 2097152,
-        serial: Some("GM 00001009-00".to_string()),
+        serial: Some("00001009-00".to_string()),
         crc32: 0x234254c7,
     });
     roms.push(Rom {
         name: "Tanglewood (World) (GOG, Itch.io) (Aftermarket) (Unl)".to_string(),
         size: 2097152,
-        serial: Some("GM 00001009-00".to_string()),
+        serial: Some("00001009-00".to_string()),
         crc32: 0xd4127487,
     });
     roms.push(Rom {
         name: "Tanglewood (World) (GOG) (Windows) (Aftermarket) (Unl)".to_string(),
         size: 2097152,
-        serial: Some("GM 00001009-00".to_string()),
+        serial: Some("00001009-00".to_string()),
         crc32: 0x6d1079dc,
     });
 
@@ -139,13 +139,13 @@ pub fn read_no_intro() -> std::io::Result<Vec<Rom>> {
     roms.push(Rom {
         name: "Sonic Compilation (Europe)".to_string(),
         size: 1048576,
-        serial: Some("GM 00001009-00".to_string()),
+        serial: Some("00001009-00".to_string()),
         crc32: 0x83bfb8bb,
     });
     roms.push(Rom {
         name: "Sonic Compilation (USA, Europe, Korea) (En) (Rev A)".to_string(),
         size: 1048576,
-        serial: Some("GM 00001009-00".to_string()),
+        serial: Some("00001009-00".to_string()),
         crc32: 0xa85ddcae,
     });
 

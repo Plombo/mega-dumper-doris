@@ -1,8 +1,7 @@
 use std::fmt::{Display, Formatter};
-use std::{collections::HashMap, error::Error};
+use std::collections::HashMap;
+use std::error::Error;
 use std::fs;
-use std::fs::File;
-use std::io::Write as _;
 use std::time::Instant;
 use encoding_rs::SHIFT_JIS;
 use serialport::{SerialPort, SerialPortType, UsbPortInfo};
@@ -501,15 +500,13 @@ fn main() {
         if vec.len() > 1 {
             let mut titles = std::collections::HashSet::new();
             for rom in vec {
-                let name = &rom.name;
-                if !name.contains("(Pirate)") && !name.contains("(Beta") && !name.contains("(Proto") {
-                    titles.insert(name.split_once(" (").map_or(name.as_str(), |m| m.0));
-                }
+                titles.insert(rom.name.split_once(" (").map_or(rom.name.as_str(), |m| m.0));
             }
             if titles.len() > 1 {
-                println!("{serial}:");
                 let mut sorted = vec.clone();
                 sorted.sort();
+                let title = sorted[0].name.split_once(" (").map_or(sorted[0].name.as_str(), |m| m.0);
+                println!("{serial}: {title}");
                 for rom in sorted {
                     println!("\t{}", &rom.name);
                 }
