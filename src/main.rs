@@ -10,8 +10,8 @@
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 
-use std::fmt::{Display, Formatter, format};
 use std::collections::HashMap;
+use std::fmt::{Display, Formatter, format};
 use std::error::Error;
 use std::fs;
 use std::time::Instant;
@@ -19,6 +19,7 @@ use encoding_rs::SHIFT_JIS;
 use serialport::{SerialPort, SerialPortType, UsbPortInfo};
 
 mod romdb;
+mod util;
 
 fn exit(code: i32) {
     std::process::exit(code);
@@ -475,7 +476,7 @@ fn process_dump(rom_data: Vec<u8>, header: RomHeader, mut rom_size: usize, sram:
     }
 
     let filename = format!("{name}.gen");
-    fs::write(&filename, &rom_data[0..rom_size])?;
+    util::write_file(&filename, &rom_data[0..rom_size])?;
     wrap_println!("\nWrote ROM to \"{}\"", &filename);
 
     if let Some(sram) = sram && let Some(sram_info) = header.sram {
@@ -502,7 +503,7 @@ fn process_dump(rom_data: Vec<u8>, header: RomHeader, mut rom_size: usize, sram:
             }
 
             let filename = format!("{name}.srm");
-            fs::write(&filename, &sram[..sram_size])?;
+            util::write_file(&filename, &sram[..sram_size])?;
             println!("Wrote SRAM to \"{}\"", &filename);
         }
     }
