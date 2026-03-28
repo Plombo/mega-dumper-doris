@@ -20,7 +20,7 @@ pub fn exit(code: i32) {
     #[cfg(target_os = "windows")] {
         use std::io::{Read, Write};
         print!("\nPress Enter to continue...");
-        std::io::stdout().flush();
+        let _ = std::io::stdout().flush();
         let _ = std::io::stdin().read(&mut [0u8]).unwrap();
     }
 
