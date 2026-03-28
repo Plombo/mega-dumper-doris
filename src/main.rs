@@ -21,10 +21,6 @@ use serialport::{SerialPort, SerialPortType, UsbPortInfo};
 mod romdb;
 mod util;
 
-fn exit(code: i32) {
-    std::process::exit(code);
-}
-
 // Prints to the terminal with proper word wrapping, so that individual words aren't split across
 // two lines. This makes the output much easier to read!
 macro_rules! wrap_println {
@@ -188,7 +184,7 @@ impl RomHeader {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 struct SramInfo {
     ram_type: u8,
     start_address: u32,
@@ -365,7 +361,7 @@ fn dump(force: bool) -> Result<(), Box<dyn Error>> {
         first_512k = conn.dump_512k()?;
     }
 
-    let header = RomHeader::from_bytes(&first_512k[0x100..0x200]);
+    let mut header = RomHeader::from_bytes(&first_512k[0x100..0x200]);
     let mut rom_size = header.rom_size;
 
     wrap_println!("\nROM header:");
@@ -387,6 +383,15 @@ fn dump(force: bool) -> Result<(), Box<dyn Error>> {
     println!("Dumping ROM...");
     let rom_data = conn.dump_rom()?;
     println!("Finished dumping ROM.\n");
+
+    // Hack: check whether this is Sonic 3 & Knuckles, which has SRAM even though the ROM header
+    // (from S&K) doesn't know about it.
+    let s3header = RomHeader::from_bytes(&rom_data[0x200100..0x200200]);
+    if header.overseas_title.trim() == "SONIC & KNUCKLES" &&
+       s3header.overseas_title.trim() == "SONIC THE             HEDGEHOG 3"
+    {
+        header.sram = s3header.sram;
+    }
 
     // This has only been tested with SRAM type F8. Fortunately, pretty much everything with SRAM
     // uses type F8.
@@ -522,15 +527,15 @@ fn main() {
     } else if args.len() > 1 {
         if let Err(err) = process_from_file(&args[1]) {
             eprintln!("Error: {:?}", err);
-            exit(1);
+            util::exit(1);
         }
-        exit(0);
+        util::exit(0);
     }
 
     if let Err(err) = dump(force) {
         eprintln!("Error: {:?}", err);
-        exit(1);
+        util::exit(1);
     }
 
-    exit(0);
+    util::exit(0);
 }
