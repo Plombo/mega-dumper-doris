@@ -511,7 +511,7 @@ fn process_dump(rom_data: Vec<u8>, header: RomHeader, rom_size: usize, sram: Opt
 
     let filename = format!("{name}.gen");
     util::write_file(&filename, &rom_data[0..rom_size])?;
-    wrap_println!("\nWrote ROM to \"{}\"", &filename);
+    println!("\nWrote ROM to \"{}\"", &filename);
     if lock_on == LockOn::Sonic2 {
         wrap_println!("\nWARNING: Sonic & Knuckles lock-on with Sonic 2 is unsupported. This ROM \
                       won't work properly.");
@@ -542,7 +542,7 @@ fn process_dump(rom_data: Vec<u8>, header: RomHeader, rom_size: usize, sram: Opt
 
             let filename = format!("{name}.srm");
             util::write_file(&filename, &sram[..sram_size])?;
-            wrap_println!("Wrote SRAM to \"{}\"", &filename);
+            println!("Wrote SRAM to \"{}\"", &filename);
         }
     }
 
