@@ -21,6 +21,9 @@ use serialport::{SerialPort, SerialPortType, UsbPortInfo};
 mod romdb;
 mod util;
 
+const KBYTE: usize = 1024;
+const MBYTE: usize = 1024 * 1024;
+
 // Prints to the terminal with proper word wrapping, so that individual words aren't split across
 // two lines. This makes the output much easier to read!
 macro_rules! wrap_println {
@@ -55,8 +58,8 @@ impl SerialPortExt for dyn SerialPort {
     // Even though the header is contained within the first 512 bytes of the ROM, the smallest
     // dump size supported by the firmware is 512KB, so do that.
     fn dump_512k(&mut self) -> Result<Vec<u8>, Box<dyn Error>> {
-        const BUF_SIZE: usize = 1024;
-        const TOTAL_SIZE: usize = 1024 * 512;
+        const BUF_SIZE: usize = 1*KBYTE;
+        const TOTAL_SIZE: usize = 512*KBYTE;
         self.write(&[0x0a, 0xaa, 0x55, 0xaa, 0xbb, 0x01])?;
         self.expect_string("512K ROM DUMP START!!!\r\n")?;
         let mut response = vec![];
@@ -71,8 +74,8 @@ impl SerialPortExt for dyn SerialPort {
 
     // Always dump the full 4 MB; some ROMs are larger than their header says.
     fn dump_rom(&mut self) -> Result<Vec<u8>, Box<dyn Error>> {
-        const BUF_SIZE: usize = 1024;
-        const TOTAL_SIZE: usize = 1024 * 1024 * 4;
+        const BUF_SIZE: usize = 1*KBYTE;
+        const TOTAL_SIZE: usize = 4*MBYTE;
         self.write(&[0x0a, 0xaa, 0x55, 0xaa, 0xbb, 0x04])?;
         self.expect_string("4M ROM DUMP START!!!\r\n")?;
         let mut response = vec![];
@@ -86,8 +89,8 @@ impl SerialPortExt for dyn SerialPort {
     }
 
     fn dump_sram(&mut self) -> Result<Vec<u8>, Box<dyn Error>> {
-        const BUF_SIZE: usize = 1024;
-        const TOTAL_SIZE: usize = 1024 * 32;
+        const BUF_SIZE: usize = 1*KBYTE;
+        const TOTAL_SIZE: usize = 32*KBYTE;
         self.write(&[0x1a, 0xaa, 0x55, 0xaa, 0xbb, 0x01])?;
         self.expect_string("32K RAM DUMP START!!!\r\n")?;
         let mut response = vec![];
@@ -162,7 +165,7 @@ impl RomHeader {
         self.device_support.is_ascii() &&
         self.rom_address_start == 0 &&
         self.rom_size > 512 &&
-        self.rom_size <= 4*1024*1024
+        self.rom_size <= 4*MBYTE
     }
 
     fn print(&self) {
@@ -354,7 +357,7 @@ fn dump(force: bool) -> Result<(), Box<dyn Error>> {
     //     2) If every byte of that 512K dump is 0xFF, read SRAM, then reread the first 512K bytes
     //        of the ROM.
     let mut first_512k = conn.dump_512k()?;
-    if first_512k == [0xff; 512*1024] {
+    if first_512k == [0xff; 512*KBYTE] {
         wrap_println!("The ROM header isn't showing up. Some games can have their ROMs \"unlocked\" by \
                       reading from SRAM. Trying that now.");
         let _ = conn.dump_sram()?;
@@ -373,7 +376,7 @@ fn dump(force: bool) -> Result<(), Box<dyn Error>> {
         wrap_println!("Header seems to be invalid.");
         if force {
             wrap_println!("Dumping the ROM anyway since --force was specified.");
-            rom_size = 4 * 1024 * 1024;
+            rom_size = 4*MBYTE;
         } else {
             wrap_println!("Use --force to dump the ROM anyway.");
             return Err("Invalid ROM header.".to_string().into());
@@ -415,15 +418,15 @@ fn dump(force: bool) -> Result<(), Box<dyn Error>> {
 // This is only useful for debugging.
 fn process_from_file(path: &str) -> Result<(), Box<dyn Error>> {
     let mut rom_data = fs::read(path)?;
-    rom_data.resize(4 * 1024 * 1024, 0xff);
+    rom_data.resize(4*MBYTE, 0xff);
     let header = RomHeader::from_bytes(&rom_data[0x100..0x200]);
-    let rom_size = if header.valid() { header.rom_size } else { 4 * 1024 * 1024 };
+    let rom_size = if header.valid() { header.rom_size } else { 4*MBYTE };
 
     wrap_println!("\nROM header:");
     header.print();
 
     let sram_data = if let Some(_) = &header.sram {
-        Some(vec![0; 32*1024])
+        Some(vec![0; 32*KBYTE])
     } else {
         None
     };
@@ -471,7 +474,7 @@ fn process_dump(rom_data: Vec<u8>, header: RomHeader, mut rom_size: usize, sram:
         wrap_println!("\nTrying to identify the locked-on cartridge...");
         let second_rom = &rom_data[0x200000..];
         let second_header = RomHeader::from_bytes(&second_rom[0x100..0x200]);
-        let second_size = if second_header.valid() { second_header.rom_size } else { 2*1024*1024 };
+        let second_size = if second_header.valid() { second_header.rom_size } else { 2*MBYTE };
         let (mut second_name, second_size) = find_no_intro_match(second_rom, second_size, &romdb);
         if second_name == "Unknown Game" {
             second_name = format!("Unsupported Cartridge ({:08x})", crc32fast::hash(&second_rom[..second_size]));
@@ -501,15 +504,15 @@ fn process_dump(rom_data: Vec<u8>, header: RomHeader, mut rom_size: usize, sram:
             sram_size &= !1; // Psy-O-Blade shows up as 32769 bytes without this
             println!("\nSRAM size: {} bytes", sram_size);
 
-            if sram_size > 32*1024 {
+            if sram_size > 32*KBYTE {
                 wrap_println!("Warning: The ROM claims an SRAM size of {sram_size} bytes, which \
                                is greater than 32 KB. Only saving the first 32 KB.");
-                sram_size = 32*1024;
+                sram_size = 32*KBYTE;
             }
 
             let filename = format!("{name}.srm");
             util::write_file(&filename, &sram[..sram_size])?;
-            println!("Wrote SRAM to \"{}\"", &filename);
+            wrap_println!("Wrote SRAM to \"{}\"", &filename);
         }
     }
 
