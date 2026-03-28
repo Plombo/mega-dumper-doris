@@ -334,6 +334,61 @@ fn find_no_intro_match(rom_data: &[u8], mut rom_size: usize, romdb: &[romdb::Rom
     (name, rom_size)
 }
 
+#[derive(PartialEq, Eq)]
+enum LockOn {
+    None,
+    Sonic2,
+    Sonic3,
+    Other(usize),
+    Unsupported,
+}
+
+impl LockOn {
+    fn second_size(&self) -> usize {
+        match self {
+            LockOn::None => 0,
+            LockOn::Sonic2 => 1*MBYTE,
+            LockOn::Sonic3 => 2*MBYTE,
+            LockOn::Other(size) => *size,
+            LockOn::Unsupported => 2*MBYTE,
+        }
+    }
+}
+
+fn lock_on_type(rom_data: &[u8], header: &RomHeader) -> LockOn {
+    if header.overseas_title.trim() == "SONIC & KNUCKLES" {
+        wrap_println!("Sonic & Knuckles detected. Seeing if anything is locked on...");
+        let second_header = RomHeader::from_bytes(&rom_data[0x200100..0x200200]);
+        let lock_on = if second_header.valid() {
+            wrap_println!("\nLocked-on cartridge header:");
+            second_header.print();
+            match second_header.domestic_title.trim() {
+                "SONIC THE             HEDGEHOG 3" => {
+                    wrap_println!("Sonic 3 is locked on.");
+                    LockOn::Sonic3
+                }
+                "SONIC THE             HEDGEHOG 2" => {
+                    wrap_println!("Sonic 2 is locked on. This isn't supported and won't work properly.");
+                    LockOn::Sonic2
+                }
+                _ => { LockOn::Other(second_header.rom_size) }
+            }
+        } else if rom_data[0x200000..] == [0xff; 0x200000] {
+            wrap_println!("Nothing is locked on.");
+            LockOn::None
+        } else {
+            wrap_println!("An unsupported cartridge (>2MB) is locked on, or the lock-on connection is bad.");
+            wrap_println!("\nLocked-on cartridge header:");
+            second_header.print();
+            LockOn::Unsupported
+        };
+        println!();
+        lock_on
+    } else {
+        LockOn::None
+    }
+}
+
 fn dump(force: bool) -> Result<(), Box<dyn Error>> {
     let mut device_path = None;
     for p in serialport::available_ports()? {
@@ -403,9 +458,9 @@ fn dump(force: bool) -> Result<(), Box<dyn Error>> {
             wrap_println!("This cartridge uses serial EEPROM for saving. Not going to try to read its save.");
             None
         } else {
-            wrap_println!("Dumping SRAM...");
+            println!("Dumping SRAM...");
             let sram_data = conn.dump_sram()?;
-            wrap_println!("Finished dumping SRAM.");
+            println!("Finished dumping SRAM.\n");
             Some(sram_data)
         }
     } else {
@@ -434,49 +489,20 @@ fn process_from_file(path: &str) -> Result<(), Box<dyn Error>> {
     process_dump(rom_data, header, rom_size, sram_data)
 }
 
-fn process_dump(rom_data: Vec<u8>, header: RomHeader, mut rom_size: usize, sram: Option<Vec<u8>>) -> Result<(), Box<dyn Error>> {
+fn process_dump(rom_data: Vec<u8>, header: RomHeader, rom_size: usize, sram: Option<Vec<u8>>) -> Result<(), Box<dyn Error>> {
     let romdb = romdb::read_no_intro()?;
 
-    let locked_on;
-    if header.overseas_title.trim() == "SONIC & KNUCKLES" {
-        wrap_println!("\nSonic & Knuckles detected. Seeing if anything is locked on...");
-        let second_header = RomHeader::from_bytes(&rom_data[0x200100..0x200200]);
-        if second_header.valid() {
-            locked_on = true;
-            rom_size += second_header.rom_size;
-            wrap_println!("\nLocked-on cartridge header:");
-            second_header.print();
-            match second_header.domestic_title.trim() {
-                "SONIC THE             HEDGEHOG 3" => {
-                    wrap_println!("Sonic 3 is locked on.");
-                }
-                "SONIC THE             HEDGEHOG 2" => {
-                    wrap_println!("Sonic 2 is locked on. This isn't supported and won't work properly.");
-                }
-                _ => {}
-            }
-        } else if rom_data[0x200000..] == [0xff; 0x200000] {
-            locked_on = false;
-            wrap_println!("Nothing is locked on.");
-        } else {
-            locked_on = true;
-            wrap_println!("An unsupported cartridge (>2MB) is locked on, or the lock-on connection is bad.");
-            wrap_println!("\nLocked-on cartridge header:");
-            second_header.print();
-        }
-        println!();
-    } else {
-        locked_on = false;
-    }
+    let lock_on = lock_on_type(&rom_data, &header);
+    let combined_size = rom_size + lock_on.second_size();
 
-    let (mut name, mut rom_size) = find_no_intro_match(&rom_data, rom_size, &romdb);
-    if name == "Sonic & Knuckles (World)" && locked_on {
+    let (mut name, mut rom_size) = find_no_intro_match(&rom_data, combined_size, &romdb);
+
+    if lock_on != LockOn::None && rom_size < combined_size {
         wrap_println!("\nTrying to identify the locked-on cartridge...");
         let second_rom = &rom_data[0x200000..];
-        let second_header = RomHeader::from_bytes(&second_rom[0x100..0x200]);
-        let second_size = if second_header.valid() { second_header.rom_size } else { 2*MBYTE };
+        let second_size = lock_on.second_size();
         let (mut second_name, second_size) = find_no_intro_match(second_rom, second_size, &romdb);
-        if second_name == "Unknown Game" {
+        if second_name == "Unknown Game" && lock_on == LockOn::Unsupported {
             second_name = format!("Unsupported Cartridge ({:08x})", crc32fast::hash(&second_rom[..second_size]));
         }
         name = format!("Sonic & Knuckles + {}", second_name);
@@ -486,6 +512,10 @@ fn process_dump(rom_data: Vec<u8>, header: RomHeader, mut rom_size: usize, sram:
     let filename = format!("{name}.gen");
     util::write_file(&filename, &rom_data[0..rom_size])?;
     wrap_println!("\nWrote ROM to \"{}\"", &filename);
+    if lock_on == LockOn::Sonic2 {
+        wrap_println!("\nWARNING: Sonic & Knuckles lock-on with Sonic 2 is unsupported. This ROM \
+                      won't work properly.");
+    }
 
     if let Some(sram) = sram && let Some(sram_info) = header.sram {
         // It's oddly tricky to deduce the SRAM size from the header. I referenced the
